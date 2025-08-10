@@ -1,27 +1,79 @@
-<h1 class="page-title">Publications</h1>
-<div class="rule"></div>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Publications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    /* Tipografi ve temel renkler */
+    html,body{background:#fff;color:#111}
+    body{font:18px/1.65 Georgia, "Times New Roman", Times, serif}
 
-<h2 class="section-title">Theses</h2>
-<ul class="pub-list">
-  <li>
-    M.Sc. Thesis: <span class="pub-title">“A Comparative Study of Feature Metrics for Classification of Human Passport Photos”</span>,
-  </li>
-  <li>
-    Ph.D. Thesis: <span class="pub-title">“Semantic Interest Point Detection”</span>,
-    <span class="pub-links">
-      <a href="files/phd_thesis.pdf" target="_blank" rel="noopener">pdf</a>,
-      <a href="files/phd_slides.pdf" target="_blank" rel="noopener">slides</a>
-    </span>
-  </li>
-</ul>
+    a{color:#2f5da8;text-decoration:none}
+    a:hover{text-decoration:underline}
 
-<h2 class="section-title">Journal</h2>
-<ul class="pub-list">
-  <li>
-    “tbw”, <em>Journal Name</em>, 2024.
-    <span class="pub-links">
-      <a href="papers/cl-masr.pdf" target="_blank" rel="noopener">pdf</a>
-    </span>
-  </li>
-  <!-- diğer maddeler... -->
-</ul>
+    /* Üst bant menü */
+    .topbar{
+      position:sticky; top:0; z-index:1000;
+      background:#2f3e46; padding:12px 20px; box-shadow:0 1px 0 rgba(0,0,0,.06)
+    }
+    .topbar .menu{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;align-items:center}
+    .topbar a{color:#fff;font-weight:600}
+
+    /* Sayfa başlığı ve çizgi */
+    .container{max-width:1000px;margin:0 auto;padding:18px 20px 56px}
+    .page-title{font-size:42px;line-height:1.2;margin:16px 0 8px;color:#2f5da8;font-weight:800}
+    .rule{border-top:1px solid #cfcfcf;margin:.6rem 0 1.6rem}
+
+    /* Bölüm başlıkları */
+    .section-title{
+      font-size:30px;font-weight:800;line-height:1.2;color:#2f5da8;
+      margin:28px 0 10px;padding-bottom:6px;border-bottom:3px solid #c9d6ea
+    }
+
+    /* Yayın listeleri */
+    .pub-list{margin:10px 0 0;padding-left:24px}
+    .pub-list li{list-style-type:square;margin:12px 0}
+    .pub-title{font-style:italic}
+    .pub-links a{margin-left:6px}
+  </style>
+</head>
+<body>
+
+  <!-- Üst yatay menü -->
+  <nav class="topbar">
+    <div class="menu">
+      <a href="biography.html" target="_blank" rel="noopener">About Me</a>
+      <a href="publications.html" target="_blank" rel="noopener">Publications</a>
+      <a href="files/sinemaslan_cv_Feb2021.pdf" target="_blank" rel="noopener">Projects</a>
+      <a href="teaching.html" target="_blank" rel="noopener">Teaching</a>
+      <a href="news.html" target="_blank" rel="noopener">News</a>
+      <a href="drawings.html" target="_blank" rel="noopener">Drawn by me</a>
+    </div>
+  </nav>
+
+  <!-- İçerik -->
+  <main class="container">
+    <h1 class="page-title">Publications</h1>
+    <div class="rule"></div>
+
+    <h2 class="section-title">Theses</h2>
+    <ul class="pub-list">
+      <li>
+        M.Sc. Thesis: <span class="pub-title">“A Comparative Study of Feature Metrics for Classification of Human Passport Photos”</span>
+      </li>
+      <li>
+        Ph.D. Thesis: <span class="pub-title">“Semantic Interest Point Detection”</span>,
+        <span class="pub-links">
+          <a href="files/phd_thesis.pdf" target="_blank" rel="noopener">pdf</a>,
+          <a href="files/phd_slides.pdf" target="_blank" rel="noopener">slides</a>
+        </span>
+      </li>
+    </ul>
+
+    <h2 class="section-title">Journal</h2>
+    <ul class="pub-list">
+      <li>
+        “tbw”, <em>Journal Name</em>, 2024.
+        <span class="pub-links
