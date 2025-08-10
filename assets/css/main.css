@@ -1,5 +1,6 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700");
 
 /*
 	Strata by HTML5 UP
@@ -3129,3 +3130,13 @@
 			}
 
 	}
+
+/* Sayfa ana başlığı – turkuaz ve aynı font */
+.page-title{
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: 700;           /* kalın */
+  font-size: 42px;            /* senin istediğin boy */
+  line-height: 1.2;
+  color: #49bf9d;             /* sayfadaki turkuaz ile aynı */
+  margin: 16px 0 .6rem;
+}
