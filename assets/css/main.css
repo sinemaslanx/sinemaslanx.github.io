@@ -1598,7 +1598,11 @@
 		color: #f09b76;
 		font-weight: 500;
 	}
-	
+	strong3 {
+		color: #111111;
+		font-weight: 700;
+	}
+
 	em, i {
 		font-style: italic;
 	}
