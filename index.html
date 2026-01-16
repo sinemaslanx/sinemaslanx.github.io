@@ -13,10 +13,10 @@
         --bg-color: #ffffff;
         --text-color: #333333;
         --accent-color: #2f5da8; /* Sizin maviniz */
-        --secondary-text: #666666;
+        --secondary-text: #555555; /* Biyografi metin rengiyle aynı ton */
         --border-color: #eeeeee;
-        --sidebar-bg: #f8f9fa; /* Çok hafif gri sidebar arka planı */
-        --date-color: #cc5454; /* Kiremit rengi tarih vurgusu */
+        --sidebar-bg: #f8f9fa;
+        --date-color: #cc5454;
     }
 
     body {
@@ -31,6 +31,7 @@
     a:hover { color: #1a3a6c; }
     h1, h2, h3 { font-weight: 600; margin-bottom: 1rem; color: #222; }
     h2 { margin-top: 2.5rem; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
+    p { margin-bottom: 1rem; color: var(--secondary-text); } /* Tüm paragrafları standartlaştırdık */
 
     /* --- ANA YERLEŞİM (GRID SİSTEMİ) --- */
     .wrapper {
@@ -39,7 +40,7 @@
         min-height: 100vh;
     }
 
-    /* --- SOL SIDEBAR (KİMLİK KISMI) --- */
+    /* --- SOL SIDEBAR --- */
     #sidebar {
         background-color: var(--sidebar-bg);
         padding: 40px 30px;
@@ -55,14 +56,14 @@
     .profile-img {
         width: 180px;
         height: 180px;
-        border-radius: 50%; /* Yuvarlak fotoğraf */
+        border-radius: 50%;
         object-fit: cover;
         margin-bottom: 25px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .name-block h1 { font-size: 1.8rem; margin: 0; line-height: 1.2; }
-    .name-block p { margin: 5px 0; color: var(--secondary-text); font-size: 0.95rem; }
+    .name-block p { margin: 5px 0; color: #666; font-size: 0.95rem; }
     .lab-badge {
         display: inline-block;
         background-color: #eef4ff; color: var(--accent-color);
@@ -71,41 +72,50 @@
     }
 
     .contact-links { margin-top: 20px; display: flex; gap: 15px; font-size: 1.2rem; }
-    .contact-links a { color: var(--secondary-text); }
+    .contact-links a { color: #666; }
     .contact-links a:hover { color: var(--accent-color); }
 
-    /* Sidebar Navigasyon Menüsü */
     .main-nav { margin-top: 40px; flex-grow: 1; }
     .main-nav ul { list-style: none; padding: 0; margin: 0; }
     .main-nav li { margin-bottom: 12px; }
-    .main-nav a {
-        color: var(--secondary-text); font-weight: 600; display: block;
-        font-size: 1.05rem;
-    }
+    .main-nav a { color: #666; font-weight: 600; display: block; font-size: 1.05rem; }
     .main-nav a:hover, .main-nav a.active { color: var(--accent-color); }
 
     /* --- SAĞ İÇERİK ALANI --- */
     #content {
         padding: 50px 60px;
-        max-width: 900px; /* Okuma kolaylığı için içerik genişliğini sınırla */
+        max-width: 900px;
     }
 
-    /* News Listesi (Temizlenmiş) */
-    ul.news-list { list-style: none; padding: 0; }
-    ul.news-list li {
-        margin-bottom: 12px;
-        line-height: 1.5;
+    /* --- NEWS SCROLL ALANI (YENİ) --- */
+    .news-scroll-wrapper {
+        max-height: 400px; /* Yaklaşık 5-6 madde sığacak yükseklik */
+        overflow-y: auto;  /* Dikey scroll aç */
+        padding-right: 10px; /* Scrollbar metne yapışmasın */
+        border: 1px solid #f0f0f0; /* İsteğe bağlı ince çerçeve */
+        border-radius: 6px;
+        padding: 15px;
+        background: #fafafa; /* Haber alanı hafif farklı bir ton */
     }
+
+    /* Scrollbar Tasarımı (Webkit - Chrome/Safari/Edge için Minimalist) */
+    .news-scroll-wrapper::-webkit-scrollbar { width: 6px; }
+    .news-scroll-wrapper::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px;}
+    .news-scroll-wrapper::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    .news-scroll-wrapper::-webkit-scrollbar-thumb:hover { background: #bbb; }
+
+    ul.news-list { list-style: none; padding: 0; margin: 0; }
+    ul.news-list li { margin-bottom: 12px; line-height: 1.5; font-size: 0.95rem; color: var(--secondary-text); }
     .news-date {
         font-family: monospace; font-weight: 700; color: var(--date-color); margin-right: 10px; font-size: 0.95em;
     }
 
-    /* --- PROJE / YAYIN KARTLARI (Aubry Tarzı) --- */
-    .pub-list { display: flex; flex-direction: column; gap: 30px; }
+    /* --- PROJE / YAYIN KARTLARI --- */
+    .pub-list { display: flex; flex-direction: column; gap: 40px; } /* Projeler arası boşluğu artırdım */
     .pub-item {
         display: grid;
-        grid-template-columns: 220px 1fr; /* Görsel genişliği ve metin alanı */
-        gap: 25px;
+        grid-template-columns: 220px 1fr;
+        gap: 30px;
         align-items: start;
     }
     .pub-thumb img {
@@ -114,14 +124,33 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         transition: transform 0.2s;
     }
-    .pub-thumb img:hover { transform: scale(1.03); }
-    .pub-info h3 { margin: 0 0 8px 0; font-size: 1.15rem; }
-    .pub-authors { color: var(--secondary-text); margin-bottom: 8px; font-size: 0.95rem; }
-    .pub-venue { font-style: italic; color: #222; margin-bottom: 12px; font-size: 0.95rem; }
-    .pub-links a {
-        display: inline-block; margin-right: 10px; font-size: 0.9rem;
-        font-family: monospace; font-weight: 600;
+    .pub-thumb img:hover { transform: scale(1.02); }
+    
+    .pub-info h3 { margin: 0 0 5px 0; font-size: 1.15rem; color: #222; }
+    .pub-authors { color: #666; margin-bottom: 5px; font-size: 0.9rem; }
+    .pub-venue { font-style: italic; color: #333; margin-bottom: 15px; font-size: 0.9rem; }
+    
+    /* ÖNEMLİ: Proje Açıklama Metni Ayarları (Bio ile aynı) */
+    .pub-info p {
+        font-weight: 400; /* Normal kalınlık */
+        color: var(--secondary-text); /* #555 - Bio rengi */
+        font-size: 1rem;
+        margin-bottom: 10px;
+        line-height: 1.6;
     }
+    /* Proje içindeki liste maddeleri için ayar */
+    .pub-info ul li {
+        color: var(--secondary-text);
+        font-weight: 400;
+    }
+
+    .pub-links a {
+        display: inline-block; margin-right: 12px; font-size: 0.85rem;
+        font-family: monospace; font-weight: 600; text-transform: uppercase;
+        border: 1px solid #dce9fc; padding: 2px 8px; border-radius: 4px;
+        background: #f8fbff;
+    }
+    .pub-links a:hover { background: #eef4ff; border-color: var(--accent-color); }
 
     /* --- MOBİL UYUMLULUK --- */
     @media (max-width: 900px) {
@@ -134,8 +163,8 @@
         .main-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
         .main-nav li { margin-bottom: 0; }
         #content { padding: 30px 20px; }
-        .pub-item { grid-template-columns: 1fr; gap: 15px; }
-        .pub-thumb img { width: 100%; max-width: 350px; } /* Mobilde görseli sınırla */
+        .pub-item { grid-template-columns: 1fr; gap: 20px; }
+        .pub-thumb img { width: 100%; max-width: 350px; }
     }
   </style>
 </head>
@@ -171,11 +200,6 @@
     <main id="content">
 
         <section id="bio">
-           <!--   <p style="background: #f0f7ff; padding: 15px; border-radius: 6px; border-left: 4px solid var(--accent-color); font-style: italic; color: #444; margin-bottom: 2rem;">
-                <strong>Looking for motivated PhD students & Postdocs</strong> passionate about the intersection of AI, Computer Vision, and Cultural Heritage.
-                <a href="mailto:siinem@gmail.com" style="text-decoration: underline; font-weight: 600;">Get in touch &rarr;</a>
-            </p> -->
-
             <p>
                 I am an Associate Professor of Computer Science at the <a href="https://www.unimi.it/en" target="_blank">University of Milan</a> (Department of Historical Studies). My research bridges <strong>Computer Vision, Machine Learning, and Pattern Recognition</strong> with the domain of <strong>Cultural Heritage</strong>.
             </p>
@@ -188,61 +212,60 @@
 
         <section id="selected-works">
             <h2>Research Focus & Selected Works</h2>
-            <p style="margin-bottom: 30px; color: var(--secondary-text);">A selection of projects highlighting my core research themes.</p>
+            <p style="margin-bottom: 40px;">A selection of projects highlighting my core research themes.</p>
 
             <div class="pub-list">
+                
                 <div class="pub-item">
                     <div class="pub-thumb">
                         <img src="images/kobi.jpg" alt="ear_project">
                     </div>
                     <div class="pub-info">
                         <h3>AI-Based Visual Analysis for Artistic Research</h3>
-                        <!-- <div class="pub-authors"><strong>S. Aslan</strong> (Scientific Lead for WP), et al.</div> -->
-                        <div class="pub-authors"><strong>In collaboration with <a href="https://abaroma.it"> Academy of Fine Arts of Rome </a> </div>
+                        <div class="pub-authors">In collaboration with <a href="https://abaroma.it">Academy of Fine Arts of Rome</a></div>
                         <div class="pub-venue">PNRR – NextGenerationEU</div>
-                          <p>We aim to extend artistic research methodologies by integrating computer vision techniques with
-                          knowledge graph-based semantic inference within WP3.  </p>
-                          <div class="pub-links">
+                        
+                        <p>We aim to extend artistic research methodologies by integrating computer vision techniques with knowledge graph-based semantic inference within WP3.</p>
+                        
+                        <div class="pub-links">
                             <a href="https://abaroma.it/enacting-artistic-research/">[Project Website]</a>
                         </div>
                     </div>
                 </div>
-                      
+                
                 <div class="pub-item">
                     <div class="pub-thumb">
                         <img src="images/RePAIR-dataset.jpg" alt="RePAIR Project">
                     </div>
                     <div class="pub-info">
-                        <!-- <h3>Solving Jigsaw Puzzles in the Wild: AI for Fresco Reconstruction</h3> -->
                         <h3>Reconstruction and Digital Restoration of Fragmented Artworks</h3>
-                        <!-- <div class="pub-authors"><strong>S. Aslan</strong>, et al.</div> -->
-                        <div class="pub-authors">In collaboration with <a href="https://sites.google.com/view/cvml-lab/home-page?authuser=0"> CVML</a>@Ca Foscari University of Venice </div>
+                        <div class="pub-authors">In collaboration with <a href="https://sites.google.com/view/cvml-lab/home-page?authuser=0">CVML</a> @ Ca' Foscari University of Venice</div>
                         <div class="pub-venue">EU H2020 <a href="https://www.repairproject.eu">RePAIR</a> Project</div>
+                      
                       <p>Developing computer vision algorithms to reassemble fragmented fresco pieces, such as those from Pompeii. 
                       We tackle the challenge of "heavy-tailed" distributions where fragments are severely damaged, eroded, or missing.</p>
+                      
                       <p>Our research specifically focuses on:</p>
-                      <ul style="margin: 5px 0 10px 20px; padding:0; font-size: 0.95rem; color: #444;">
+                      <ul style="margin: 5px 0 10px 20px; padding:0; font-size: 0.95rem;">
                           <li>Extraction of effective descriptors for irregular fragments,</li>
-                          <li>Automatic puzzle-solving algorithms combined with <strong>human-in-the-loop</strong> strategies,</li>
-                          <li><strong>Inpainting methodologies</strong> for the complete digital restoration of missing content.</li>
+                          <li>Automatic puzzle-solving algorithms combined with human-in-the-loop strategies,</li>
+                          <li>Inpainting methodologies for the complete digital restoration of missing content.</li>
                       </ul>  
-                      </p>
-                      <!-- <p>Developing computer vision algorithms to reassemble thousands of fragmented fresco pieces from Pompeii. We tackle the "heavy-tailed" puzzle problem where pieces are damaged, eroded, or missing.</p> -->
+                      
                         <div class="pub-links">
                             <a href="https://www.repairproject.eu" target="_blank">[Project Website]</a>
-                            <!-- <a href="#">[PDF]</a> -->
+                            <a href="#">[PDF]</a>
                         </div>
                     </div>
                 </div>
 
-
-                 <div class="pub-item">
+                <div class="pub-item">
                     <div class="pub-thumb">
                         <img src="https://placehold.co/300x160/f0e0d0/a85d2f?text=Another+Publication+Image" alt="Publication Image">
                     </div>
                     <div class="pub-info">
                         <h3>Visual Dictionaries and Semantic Segmentation with DCNNs</h3>
-                        <div class="pub-authors"><strong>S. Aslan</strong>, et al.</div>
+                        <div class="pub-authors">S. Aslan, et al.</div>
                         <div class="pub-venue">Journal of Visual Communication and Image Representation (JVCI), 2017</div>
                         <p>An exploration of visual dictionaries from a model-driven perspective, applied to semantic segmentation tasks.</p>
                         <div class="pub-links">
@@ -252,38 +275,18 @@
                 </div>
 
             </div>
-            <div style="margin-top: 25px; text-align: right;">
+            <div style="margin-top: 30px; text-align: right;">
                 <a href="publications.html" style="font-weight: 600;">See full publication list &rarr;</a>
             </div>
         </section>
 
         <section id="news">
             <h2>News & Updates</h2>
-            <ul class="news-list">
-                <li><span class="news-date">[12/2025]</span> Giving an invited talk titled <a href="https://www.dish.unito.it/it/eventi/ciclo-di-seminari-falling-digital-humanities" target="_blank">Exploring Cultural Heritage through Computer Vision</a> at the University of Turin.</li>
-                <li><span class="news-date">[10/2025]</span> Area Chair at <a href="https://2026.ieeeicassp.org" target="_blank"> IEEE ICASSP 2026 </a>.</li>
-                <li><span class="news-date">[09/2025]</span> Co-Organizing <a href="https://sites.google.com/view/faper2025" target="_blank"> FAPER </a> workshop within <a href="https://sites.google.com/view/iciap25" target="_blank"> ICIAP 2025 </a>.</li>
-                <li><span class="news-date">[09/2025]</span> Presented our paper titled "Solving Jigsaw Puzzles in the Wild: Human-Guided Reconstruction of Cultural Heritage Fragments" at the Computer Vision session of IEEE MLSP, both as a poster and an oral presentation.</li>
-                <li><span class="news-date">[08/2025]</span> Co-Organizing the special session <a href="https://ai-cah2025.github.io/main/" target="_blank"> Applications of AI in the Analysis of Cultural and Artistic Heritage</a> within <a href="https://2025.ieeemlsp.org/en/" target="_blank"> MLSP 2025 </a>.</li>
-                <li><span class="news-date">[06/2025]</span> Area Chair at <a href="https://2025.ieeemlsp.org/en/" target="_blank"> MLSP2025 </a>.</li>
-                <li><span class="news-date">[05/2025]</span> Area Chair at <a href="https://bmvc2025.bmva.org" target="_blank"> BMVC2025 </a>.</li>
-                <li><span class="news-date">[04/2025]</span> Senior Program Committee Member at <a href="https://ecai2025.org" target="_blank"> ECAI2025 </a>.</li>
-                <li><span class="news-date">[01/2025]</span> Associate Editor at <a href="https://www.sciencedirect.com/journal/journal-of-the-franklin-institute" target="_blank"> Journal of the Franklin Institute </a>.</li>
-                <li><span class="news-date">[05/2024]</span> Area Chair at <a href="https://bmvc2024.org" target="_blank"> BMVC2024 </a>.</li>
-                <li><span class="news-date">[09/2024]</span> Joined to University of Milan as an Associate professor.</li>
-                <li><span class="news-date">[05/2022]</span> Joined to Ca Foscari University of Venice as an Assistant professor.</li>
-                <li><span class="news-date">[05/2018]</span> Gave a seminar on <em>Visual dictionaries and Semantic segmentation with DCNNs</em> at Dokuz Eylül University, Electrical & Electronics Engineering Department, İzmir.</li>
-                <li><span class="news-date">[03/2018]</span> Presented paper at the special session of <em>Signal Processing Technologies for Gastronomy, Food Analysis, Nutrition and Dietetics</em> of <a href="http://www.siu2018.org/" target="_blank">SIU 2018 </a>.</li>
-                <li><span class="news-date">[01/2018]</span> Gave a seminar on the topic of <em>Image understanding: Visual dictionaries and Semantic segmentation</em> at <a href="http://www.ecltech.org/" target="_blank">European Centre for Living Technology (ECLT) </a> of University Ca' Foscari of Venice, Italy.</li>
-                <li><span class="news-date">[11/2017]</span> Gave a seminar on the topic of <em>Exploring visual dictionaries: A model driven perspective</em> at the Faculty of Science and Technology of University Paris-Est Créteil (UPEC), Paris, France.</li>
-                <li><span class="news-date">[09/2017]</span> Our paper is accepted to be published in <a href="https://www.journals.elsevier.com/journal-of-visual-communication-and-image-representation" target="_blank">JVCI</a>!</li>
-                <li><span class="news-date">[09/2017]</span> Presented our paper at <a href="http://madima.org/" target="_blank"> MADiMa 2017 </a>.</li>
-                <li><span class="news-date">[03/2017]</span> Moved to Milano to join <a href="http://www.ivl.disco.unimib.it/" target="_blank">IVL</a> team!</li>
-            </ul>
-        </section>
-
-    </main>
-</div>
-
-</body>
-</html>
+            
+            <div class="news-scroll-wrapper">
+                <ul class="news-list">
+                    <li><span class="news-date">[12/2025]</span> Giving an invited talk titled <a href="https://www.dish.unito.it/it/eventi/ciclo-di-seminari-falling-digital-humanities" target="_blank">Exploring Cultural Heritage through Computer Vision</a> at the University of Turin.</li>
+                    <li><span class="news-date">[10/2025]</span> Area Chair at <a href="https://2026.ieeeicassp.org" target="_blank"> IEEE ICASSP 2026 </a>.</li>
+                    <li><span class="news-date">[09/2025]</span> Co-Organizing <a href="https://sites.google.com/view/faper2025" target="_blank"> FAPER </a> workshop within <a href="https://sites.google.com/view/iciap25" target="_blank"> ICIAP 2025 </a>.</li>
+                    <li><span class="news-date">[09/2025]</span> Presented our paper titled "Solving Jigsaw Puzzles in the Wild: Human-Guided Reconstruction of Cultural Heritage Fragments" at the Computer Vision session of IEEE MLSP, both as a poster and an oral presentation.</li>
+                    <li><span class="news-date">[08/2025]</span> Co-Organizing the special session <a href="https://ai-cah2025.github.io/main/" target="_blank"> Applications of AI in the Analysis of Cultural and Artistic Heritage</a> within <a href="https://2025
