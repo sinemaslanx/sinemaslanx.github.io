@@ -13,7 +13,7 @@
         --bg-color: #ffffff;
         --text-color: #333333;
         --accent-color: #2f5da8; /* Sizin maviniz */
-        --secondary-text: #555555; /* Biyografi metin rengiyle aynı ton */
+        --secondary-text: #555555;
         --border-color: #eeeeee;
         --sidebar-bg: #f8f9fa;
         --date-color: #cc5454;
@@ -31,7 +31,7 @@
     a:hover { color: #1a3a6c; }
     h1, h2, h3 { font-weight: 600; margin-bottom: 1rem; color: #222; }
     h2 { margin-top: 2.5rem; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
-    p { margin-bottom: 1rem; color: var(--secondary-text); } /* Tüm paragrafları standartlaştırdık */
+    p { margin-bottom: 1rem; color: var(--secondary-text); }
 
     /* --- ANA YERLEŞİM (GRID SİSTEMİ) --- */
     .wrapper {
@@ -87,31 +87,43 @@
         max-width: 900px;
     }
 
-    /* --- NEWS SCROLL ALANI (YENİ) --- */
+    /* --- NEWS SCROLL ALANI (GÜNCELLENDİ) --- */
     .news-scroll-wrapper {
-        max-height: 400px; /* Yaklaşık 5-6 madde sığacak yükseklik */
-        overflow-y: auto;  /* Dikey scroll aç */
-        padding-right: 10px; /* Scrollbar metne yapışmasın */
-        border: 1px solid #f0f0f0; /* İsteğe bağlı ince çerçeve */
+        /* Yüksekliği 400px'den 280px'e indirdik. Artık içerik taşacak ve scroll çıkacak */
+        height: 280px; 
+        overflow-y: auto;
+        padding-right: 10px;
+        border: 1px solid #e0e0e0;
         border-radius: 6px;
         padding: 15px;
-        background: #fafafa; /* Haber alanı hafif farklı bir ton */
+        background: #fafafa;
+        /* Hafif bir iç gölge ekleyerek içeriğin "içeride" olduğunu hissettiriyoruz */
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.02); 
     }
 
-    /* Scrollbar Tasarımı (Webkit - Chrome/Safari/Edge için Minimalist) */
-    .news-scroll-wrapper::-webkit-scrollbar { width: 6px; }
+    /* Scrollbar Tasarımı */
+    .news-scroll-wrapper::-webkit-scrollbar { width: 8px; }
     .news-scroll-wrapper::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px;}
-    .news-scroll-wrapper::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    .news-scroll-wrapper::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; border: 2px solid #f1f1f1; }
     .news-scroll-wrapper::-webkit-scrollbar-thumb:hover { background: #bbb; }
 
     ul.news-list { list-style: none; padding: 0; margin: 0; }
-    ul.news-list li { margin-bottom: 12px; line-height: 1.5; font-size: 0.95rem; color: var(--secondary-text); }
+    ul.news-list li { 
+        margin-bottom: 12px; 
+        line-height: 1.5; 
+        font-size: 0.95rem; 
+        color: var(--secondary-text); 
+        padding-bottom: 8px;
+        border-bottom: 1px dashed #eee; /* Maddeler arasına çok hafif çizgi */
+    }
+    ul.news-list li:last-child { border-bottom: none; }
+    
     .news-date {
         font-family: monospace; font-weight: 700; color: var(--date-color); margin-right: 10px; font-size: 0.95em;
     }
 
-    /* --- PROJE / YAYIN KARTLARI --- */
-    .pub-list { display: flex; flex-direction: column; gap: 40px; } /* Projeler arası boşluğu artırdım */
+    /* --- PROJE KARTLARI --- */
+    .pub-list { display: flex; flex-direction: column; gap: 40px; }
     .pub-item {
         display: grid;
         grid-template-columns: 220px 1fr;
@@ -130,19 +142,14 @@
     .pub-authors { color: #666; margin-bottom: 5px; font-size: 0.9rem; }
     .pub-venue { font-style: italic; color: #333; margin-bottom: 15px; font-size: 0.9rem; }
     
-    /* ÖNEMLİ: Proje Açıklama Metni Ayarları (Bio ile aynı) */
     .pub-info p {
-        font-weight: 400; /* Normal kalınlık */
-        color: var(--secondary-text); /* #555 - Bio rengi */
+        font-weight: 400;
+        color: var(--secondary-text);
         font-size: 1rem;
         margin-bottom: 10px;
         line-height: 1.6;
     }
-    /* Proje içindeki liste maddeleri için ayar */
-    .pub-info ul li {
-        color: var(--secondary-text);
-        font-weight: 400;
-    }
+    .pub-info ul li { color: var(--secondary-text); font-weight: 400; }
 
     .pub-links a {
         display: inline-block; margin-right: 12px; font-size: 0.85rem;
@@ -289,4 +296,27 @@
                     <li><span class="news-date">[10/2025]</span> Area Chair at <a href="https://2026.ieeeicassp.org" target="_blank"> IEEE ICASSP 2026 </a>.</li>
                     <li><span class="news-date">[09/2025]</span> Co-Organizing <a href="https://sites.google.com/view/faper2025" target="_blank"> FAPER </a> workshop within <a href="https://sites.google.com/view/iciap25" target="_blank"> ICIAP 2025 </a>.</li>
                     <li><span class="news-date">[09/2025]</span> Presented our paper titled "Solving Jigsaw Puzzles in the Wild: Human-Guided Reconstruction of Cultural Heritage Fragments" at the Computer Vision session of IEEE MLSP, both as a poster and an oral presentation.</li>
-                    <li><span class="news-date">[08/2025]</span> Co-Organizing the special session <a href="https://ai-cah2025.github.io/main/" target="_blank"> Applications of AI in the Analysis of Cultural and Artistic Heritage</a> within <a href="https://2025
+                    <li><span class="news-date">[08/2025]</span> Co-Organizing the special session <a href="https://ai-cah2025.github.io/main/" target="_blank"> Applications of AI in the Analysis of Cultural and Artistic Heritage</a> within <a href="https://2025.ieeemlsp.org/en/" target="_blank"> MLSP 2025 </a>.</li>
+                    <li><span class="news-date">[06/2025]</span> Area Chair at <a href="https://2025.ieeemlsp.org/en/" target="_blank"> MLSP2025 </a>.</li>
+                    <li><span class="news-date">[05/2025]</span> Area Chair at <a href="https://bmvc2025.bmva.org" target="_blank"> BMVC2025 </a>.</li>
+                    <li><span class="news-date">[04/2025]</span> Senior Program Committee Member at <a href="https://ecai2025.org" target="_blank"> ECAI2025 </a>.</li>
+                    <li><span class="news-date">[01/2025]</span> Associate Editor at <a href="https://www.sciencedirect.com/journal/journal-of-the-franklin-institute" target="_blank"> Journal of the Franklin Institute </a>.</li>
+                    <li><span class="news-date">[05/2024]</span> Area Chair at <a href="https://bmvc2024.org" target="_blank"> BMVC2024 </a>.</li>
+                    <li><span class="news-date">[09/2024]</span> Joined to University of Milan as an Associate professor.</li>
+                    <li><span class="news-date">[05/2022]</span> Joined to Ca Foscari University of Venice as an Assistant professor.</li>
+                    <li><span class="news-date">[05/2018]</span> Gave a seminar on <em>Visual dictionaries and Semantic segmentation with DCNNs</em> at Dokuz Eylül University, İzmir.</li>
+                    <li><span class="news-date">[03/2018]</span> Presented paper at the special session of SIU 2018.</li>
+                    <li><span class="news-date">[01/2018]</span> Gave a seminar at European Centre for Living Technology (ECLT), Venice.</li>
+                    <li><span class="news-date">[11/2017]</span> Gave a seminar at University Paris-Est Créteil (UPEC), France.</li>
+                    <li><span class="news-date">[09/2017]</span> Our paper is accepted to be published in JVCI!</li>
+                    <li><span class="news-date">[09/2017]</span> Presented our paper at MADiMa 2017.</li>
+                    <li><span class="news-date">[03/2017]</span> Moved to Milano to join IVL team!</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>
