@@ -171,22 +171,24 @@
     <main id="content">
 
         <section id="bio">
-            <p style="background: #f0f7ff; padding: 15px; border-radius: 6px; border-left: 4px solid var(--accent-color); font-style: italic; color: #444; margin-bottom: 2rem;">
+           <!--   <p style="background: #f0f7ff; padding: 15px; border-radius: 6px; border-left: 4px solid var(--accent-color); font-style: italic; color: #444; margin-bottom: 2rem;">
                 <strong>Looking for motivated PhD students & Postdocs</strong> passionate about the intersection of AI, Computer Vision, and Cultural Heritage.
                 <a href="mailto:siinem@gmail.com" style="text-decoration: underline; font-weight: 600;">Get in touch &rarr;</a>
-            </p>
+            </p> -->
 
             <p>
                 I am an Associate Professor of Computer Science at the <a href="https://www.unimi.it/en" target="_blank">University of Milan</a> (Department of Historical Studies). My research bridges <strong>Computer Vision, Machine Learning, and Pattern Recognition</strong> with the domain of <strong>Cultural Heritage</strong>.
             </p>
             <p>
-                My work focuses on developing AI techniques for tasks where data is scarce, fragmented, or highly domain-specific, such as the digital restoration of frescoes (solving heavy-tailed jigsaw puzzles), analyzing artistic techniques in paintings, and visual analysis of ancient coins. Previously, I held positions at Ca’ Foscari University of Venice and University of Milano-Bicocca.
+              My work focuses on developing AI techniques for tasks where data is scarce, fragmented, or highly domain-specific, such as the digital restoration of frescoes, 
+              analyzing artistic techniques in paintings, and visual analysis of ancient coins. 
+              Previously, I held positions at <a href="https://www.unive.it/pag/28183/">Ca’ Foscari University of Venice</a> and <a href="https://www.disco.unimib.it/en">University of Milano-Bicocca</a>, and conducted visiting research at <a href="https://busim.bogazici.edu.tr">Boğaziçi University</a> in Turkey.
             </p>
         </section>
 
         <section id="selected-works">
             <h2>Research Focus & Selected Works</h2>
-            <p style="margin-bottom: 30px; color: var(--secondary-text);">A selection of projects highlighting the core research themes of the VCH Lab.</p>
+            <p style="margin-bottom: 30px; color: var(--secondary-text);">A selection of projects highlighting my core research themes.</p>
 
             <div class="pub-list">
 
@@ -195,13 +197,23 @@
                         <img src="https://placehold.co/300x160/e0e0e0/999999?text=Project+Image+(RePAIR)" alt="RePAIR Project">
                     </div>
                     <div class="pub-info">
-                        <h3>Solving Jigsaw Puzzles in the Wild: AI for Fresco Reconstruction</h3>
-                        <div class="pub-authors"><strong>S. Aslan</strong>, et al.</div>
-                        <div class="pub-venue">EU H2020 RePAIR Project & IEEE MLSP 2025</div>
-                        <p>Developing computer vision algorithms to reassemble thousands of fragmented fresco pieces from Pompeii. We tackle the "heavy-tailed" puzzle problem where pieces are damaged, eroded, or missing.</p>
+                        /* <h3>Solving Jigsaw Puzzles in the Wild: AI for Fresco Reconstruction</h3> */
+                        <h3>Reconstruction and Digital Restoration of Fragmented Artworks</h3>
+                        /* <div class="pub-authors"><strong>S. Aslan</strong>, et al.</div> */
+                        <div class="pub-venue">EU H2020 <a href="https://www.repairproject.eu">RePAIR</a> Project</div>
+                      Developing computer vision pipelines to reassemble thousands of fragmented fresco pieces, such as those from Pompeii. 
+                      We tackle the challenge of <strong>"heavy-tailed"</strong> distributions where fragments are severely damaged, eroded, or missing.
+            Our research specifically focuses on:
+            <ul style="margin: 5px 0 10px 20px; padding:0; font-size: 0.95rem; color: #444;">
+                <li>Extraction of effective descriptors for irregular fragments,</li>
+                <li>Automatic puzzle-solving algorithms combined with <strong>human-in-the-loop</strong> strategies,</li>
+                <li><strong>Inpainting methodologies</strong> for the complete digital restoration of missing content.</li>
+            </ul>  
+                      
+                      /* <p>Developing computer vision algorithms to reassemble thousands of fragmented fresco pieces from Pompeii. We tackle the "heavy-tailed" puzzle problem where pieces are damaged, eroded, or missing.</p> */
                         <div class="pub-links">
                             <a href="https://www.repairproject.eu" target="_blank">[Project Page]</a>
-                            <a href="#">[PDF]</a>
+                            /* <a href="#">[PDF]</a> */
                         </div>
                     </div>
                 </div>
