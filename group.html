@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Group | VCH Lab</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- MEVCUT CSS (Aynen Korundu) --- */
+    :root {
+        --sidebar-width: 280px;
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --accent-color: #2f5da8;
+        --secondary-text: #555555;
+        --border-color: #eeeeee;
+        --sidebar-bg: #f8f9fa;
+        --date-color: #cc5454;
+    }
+
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text-color); line-height: 1.6; background-color: var(--bg-color); }
+    a { text-decoration: none; color: var(--accent-color); transition: color 0.2s; }
+    a:hover { color: #1a3a6c; }
+    h1, h2, h3 { font-weight: 600; margin-bottom: 1rem; color: #222; }
+    h2 { margin-top: 3rem; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); font-size: 1.5rem; }
+    p { margin-bottom: 1rem; color: var(--secondary-text); }
+
+    .wrapper { display: grid; grid-template-columns: var(--sidebar-width) 1fr; min-height: 100vh; }
+    
+    /* Sidebar Styles */
+    #sidebar { background-color: var(--sidebar-bg); padding: 40px 30px; position: sticky; top: 0; height: 100vh; overflow-y: auto; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
+    .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .name-block h1 { font-size: 1.8rem; margin: 0; line-height: 1.2; }
+    .name-block p { margin: 5px 0; color: #666; font-size: 0.95rem; }
+    .lab-badge { display: inline-block; background-color: #eef4ff; color: var(--accent-color); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; border: 1px solid #dce9fc; }
+    .contact-links { margin-top: 20px; display: flex; gap: 15px; font-size: 1.2rem; }
+    .contact-links a { color: #666; }
+    .contact-links a:hover { color: var(--accent-color); }
+    .main-nav { margin-top: 40px; flex-grow: 1; }
+    .main-nav ul { list-style: none; padding: 0; margin: 0; }
+    .main-nav li { margin-bottom: 12px; }
+    .main-nav a { color: #666; font-weight: 600; display: block; font-size: 1.05rem; }
+    .main-nav a:hover, .main-nav a.active { color: var(--accent-color); }
+    
+    #content { padding: 50px 60px; max-width: 900px; }
+
+    /* --- TEAM PAGE SPECIFIC CSS --- */
+
+    /* 1. Üye Kartları (Postdoc & Researcher için) - Projects kartlarına benzer */
+    .member-list { display: flex; flex-direction: column; gap: 30px; }
+    .member-item { display: grid; grid-template-columns: 150px 1fr; gap: 30px; align-items: start; padding-bottom: 30px; border-bottom: 1px dashed #eee; }
+    .member-item:last-child { border-bottom: none; }
+    
+    .member-photo {
+        width: 100%; height: 150px; 
+        object-fit: cover; 
+        border-radius: 8px; /* Karemsi ama yumuşak köşe */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        filter: grayscale(20%); /* Hafif siyah beyaz, üzerine gelince renklenir */
+        transition: filter 0.3s;
+    }
+    .member-item:hover .member-photo { filter: grayscale(0%); }
+
+    .member-info h3 { margin: 0 0 5px 0; font-size: 1.2rem; color: #222; }
+    .member-role { color: var(--accent-color); font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; display: block;}
+    .member-info p { font-size: 0.95rem; margin-bottom: 10px; }
+    
+    /* Sosyal ikonlar (Mail, Web, Linkedin) */
+    .member-links a { margin-right: 10px; color: #888; font-size: 1.1rem; }
+    .member-links a:hover { color: var(--accent-color); }
+
+    /* 2. Öğrenciler (Daha kompakt liste) */
+    .student-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+    .student-item { background: #fafafa; padding: 15px; border-radius: 6px; text-align: center; border: 1px solid #eee; }
+    .student-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; }
+    .student-item h4 { margin: 5px 0; font-size: 1rem; color: #333; }
+    .student-item span { font-size: 0.85rem; color: #666; display: block; }
+
+    /* 3. Alumni (Temiz Liste) */
+    ul.alumni-list { list-style: none; padding: 0; }
+    ul.alumni-list li { margin-bottom: 10px; padding-left: 15px; border-left: 3px solid #eee; font-size: 0.95rem; color: #555; }
+    ul.alumni-list li strong { color: #333; font-weight: 600; margin-right: 5px; }
+
+    /* 4. Collaborations (Logo Grid) */
+    .collab-grid { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 20px; }
+    .collab-item img { height: 50px; width: auto; opacity: 0.7; filter: grayscale(100%); transition: all 0.3s; }
+    .collab-item img:hover { opacity: 1; filter: grayscale(0%); transform: scale(1.05); }
+
+    /* Mobil */
+    @media (max-width: 900px) {
+        .wrapper { grid-template-columns: 1fr; }
+        #sidebar { height: auto; position: relative; padding: 30px; border-right: none; border-bottom: 1px solid var(--border-color); align-items: center; text-align: center; }
+        .main-nav { margin-top: 25px; width: 100%; }
+        .main-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .member-item { grid-template-columns: 1fr; text-align: center; gap: 15px;}
+        .member-photo { width: 120px; height: 120px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <aside id="sidebar">
+        <img src="files/sinemaslan2.jpeg" alt="Sinem Aslan" class="profile-img">
+        <div class="name-block">
+            <h1>Sinem Aslan, Ph.D.</h1>
+            <div class="lab-badge">PI of VCH Lab</div>
+            <p>Assoc. Prof., University of Milan</p>
+            <p>Assoc. Member, ECLT Venice</p>
+        </div>
+        <div class="contact-links">
+            <a href="mailto:siinem@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://github.com/siinem"><i class="fab fa-github"></i></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="team.html" class="active">Group</a></li> </ul>
+        </nav>
+    </aside>
+
+    <main id="content">
+        
+        <h1 style="margin-bottom: 0.5rem;">VCH Lab Team</h1>
+        <p style="font-size: 1.1rem; color: #666;">
+            Our group is composed of researchers and students passionate about the intersection of Artificial Intelligence, Computer Vision, and Cultural Heritage.
+        </p>
+
+        <h2>Team Members</h2>
+        <div class="member-list">
+            
+            <div class="member-item">
+                <img src="https://placehold.co/150x150/e0e0e0/999?text=Postdoc" alt="Member Name" class="member-photo">
+                <div class="member-info">
+                    <h3>Name Surname</h3>
+                    <span class="member-role">Postdoctoral Researcher</span>
+                    <p>Joined the VCH Lab in 2025. Working on the RePAIR project, focusing on 3D reconstruction of frescoes. Ph.D. received from [University Name].</p>
+                    <div class="member-links">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a> <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member-item">
+                <img src="https://placehold.co/150x150/d0e0f0/2f5da8?text=Researcher" alt="Member Name" class="member-photo">
+                <div class="member-info">
+                    <h3>Name Surname</h3>
+                    <span class="member-role">Research Fellow / PhD Student</span>
+                    <p>Focusing on deep learning for pattern recognition in ancient numismatics. Interested in semi-supervised learning techniques.</p>
+                    <div class="member-links">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>Visiting Scholars & Students</h2>
+        <div class="student-grid">
+            
+            <div class="student-item">
+                <img src="https://placehold.co/80x80/eee/bbb?text=Student" alt="Student Name" class="student-photo">
+                <h4>Student Name</h4>
+                <span>Erasmus Student</span>
+                <span>(University of X)</span>
+            </div>
+
+            <div class="student-item">
+                <img src="https://placehold.co/80x80/eee/bbb?text=Student" alt="Student Name" class="student-photo">
+                <h4>Student Name</h4>
+                <span>Visiting Researcher</span>
+                <span>(Topic: Style Transfer)</span>
+            </div>
+
+        </div>
+
+        <h2>Alumni</h2>
+        <ul class="alumni-list">
+            <li><strong>Name Surname</strong> (MSc Student, 2023) — Thesis: "Title of the thesis". Now Ph.D. student at [University].</li>
+            <li><strong>Name Surname</strong> (Visiting Scholar, 2022) — Now Data Scientist at [Company].</li>
+            <li><strong>Name Surname</strong> (Erasmus, 2021) — Currently at [Institution].</li>
+        </ul>
+
+        <h2>Collaborations</h2>
+        <p>We actively collaborate with international research institutes and cultural heritage organizations.</p>
+        
+        <div class="collab-grid">
+            <div class="collab-item">
+                <a href="https://www.repairproject.eu" target="_blank" title="RePAIR Project">
+                    <img src="https://placehold.co/120x50/fff/666?text=RePAIR+Logo" alt="RePAIR">
+                </a>
+            </div>
+            <div class="collab-item">
+                <a href="https://www.unive.it" target="_blank" title="Ca' Foscari University">
+                    <img src="https://placehold.co/120x50/fff/666?text=Ca'+Foscari" alt="Unive">
+                </a>
+            </div>
+            <div class="collab-item">
+                <a href="#" title="Academy of Fine Arts">
+                    <img src="https://placehold.co/120x50/fff/666?text=Academy+Rome" alt="Academy">
+                </a>
+            </div>
+             <div class="collab-item">
+                <a href="#" title="IIT">
+                    <img src="https://placehold.co/80x50/fff/666?text=IIT" alt="IIT">
+                </a>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>
