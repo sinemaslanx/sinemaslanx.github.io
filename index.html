@@ -153,20 +153,20 @@
     .pub-links a {
         display: inline-block; 
         margin-right: 15px; 
-        font-size: 0.95rem;
+        font-size: 0.85rem;     /* Yazı boyutu küçültüldü (Zariflik için) */
         font-family: monospace; 
-        font-weight: 700; 
-        /* text-transform: uppercase; -- Bunu kaldırdık, yazdığınız gibi görünsün */
-        color: var(--accent-color);
+        font-weight: normal;    /* Bold (700) -> Normal (400) yapıldı */
+        color: #7a92ac;         /* Renk: Pastel Gri-Mavi yapıldı */
         /* Buton stili temizlendi */
         background: none;
         border: none;
         padding: 0;
+        transition: color 0.2s ease;
     }
     .pub-links a:hover { 
-        text-decoration: underline; /* Üzerine gelince altı çizili */
+        text-decoration: underline; 
         background: none; 
-        color: #1a3a6c; 
+        color: var(--accent-color); /* Hover olunca koyu maviye döner */
     }
 
     /* --- MOBİL UYUMLULUK --- */
@@ -259,8 +259,6 @@
                     <div class="pub-info">
                         <h3>Computational Analysis of Artistic Creation Processes</h3>
                         <div class="pub-authors">Collaboration within the EU Pathfinder Project MUHAI </div>
-                        <!-- <div class="pub-venue">EU H2020 Projects (MUHAI & Humane-AI.net) / S+T+ARTS — (2019–2023)</div> -->
-                        
                         <p>Developing a comparative computer vision framework to deconstruct the artistic method of figurative painters. </p>
                         <div class="pub-links">
                           <a href="https://muhai.org ">[Project Website]</a> 
@@ -302,8 +300,7 @@
                     </div>
                     <div class="pub-info">
                         <h3>Visual Analysis of Ancient Coins</h3>
-                        <!-- <div class="pub-authors">S. Aslan, et al.</div> -->
-                        <!-- <div class="pub-venue">Journal of Visual Communication and Image Representation (JVCI), 2017</div> -->
+                        <div class="pub-authors">S. Aslan, et al.</div>
                         <p>TBW.</p>
                         <div class="pub-links">
                             <a href="#">[PDF]</a>
@@ -330,17 +327,19 @@
                     <li><span class="news-date">[09/2025]</span> Presented our paper titled "Solving Jigsaw Puzzles in the Wild: Human-Guided Reconstruction of Cultural Heritage Fragments" at the Computer Vision session of <a href="https://2025.ieeemlsp.org/en/">IEEE MLSP</a>, both as a poster and an oral presentation.</li>
                     <li><span class="news-date">[08/2025]</span> Co-Organizing the special session <a href="https://ai-cah2025.github.io/main/" target="_blank"> Applications of AI in the Analysis of Cultural and Artistic Heritage</a> within <a href="https://2025.ieeemlsp.org/en/" target="_blank"> MLSP 2025 </a>.</li>
                     <li><span class="news-date">[06/2025]</span> Area Chair at <a href="https://2025.ieeemlsp.org/en/" target="_blank"> MLSP2025 </a>.</li>
-                    <li><span class="news-date">[05/2025]</span> Gave a talk on "Using Computational Vision to Interpret Artistic Intent" at the WG3 meeting of the <a href="https://artisticintelligence.info/">COST Action CA23158 (ARTinRARE) </a> in Prague.</li>
                     <li><span class="news-date">[05/2025]</span> Area Chair at <a href="https://bmvc2025.bmva.org" target="_blank"> BMVC2025 </a>.</li>
                     <li><span class="news-date">[04/2025]</span> Senior Program Committee Member at <a href="https://ecai2025.org" target="_blank"> ECAI2025 </a>.</li>
-                    <li><span class="news-date">[02/2025]</span> Gave a talk on "Exploring Artistic, Cultural, and Historical Heritage through Computer Vision" to the <a href="https://an-icon.unimi.it/calendars/exploring-artistic-cultural-and-historical-heritage-through-computer-vision/"> AN-ICON Research Group  </a>.</li>
                     <li><span class="news-date">[01/2025]</span> Associate Editor at <a href="https://www.sciencedirect.com/journal/journal-of-the-franklin-institute" target="_blank"> Journal of the Franklin Institute </a>.</li>
-                    <li><span class="news-date">[12/2024]</span> Gave a talk on "Computer Vision meets Cultural and Historical Heritage" at <a href="https://www.tuni.fi/en/about-us/computing-sciences">University of Tampere, Faculty of Computing Sciences</a> in Finland.</li>
-                    <li><span class="news-date">[09/2024]</span> Joined to <a href="https://www.unimi.it">University of Milan</a> as an Associate professor.</li>
                     <li><span class="news-date">[05/2024]</span> Area Chair at <a href="https://bmvc2024.org" target="_blank"> BMVC2024 </a>.</li>
-                    <li><span class="news-date">[10/2023]</span> Presented our paper titled "Semantic Motif Segmentation of Archaeological Fresco Fragments" at the <a href="https://www.cvl.iis.u-tokyo.ac.jp/e-Heritage2023/">4th ICCV Workshop on e-Heritage</a> in Paris.</li>
-                    <li><span class="news-date">[04/2023]</span> Presented the RePAIR project at the Symposium of From Hype to Reality: Artificial Intelligence in the Study of Art and Culture in Zurich, Switzerland.
-                    <li><span class="news-date">[05/2022]</span> Joined to <a href="https://www.unive.it">Ca Foscari University of Venice</a> as an Assistant professor.</li>
+                    <li><span class="news-date">[09/2024]</span> Joined to University of Milan as an Associate professor.</li>
+                    <li><span class="news-date">[05/2022]</span> Joined to Ca Foscari University of Venice as an Assistant professor.</li>
+                    <li><span class="news-date">[05/2018]</span> Gave a seminar on <em>Visual dictionaries and Semantic segmentation with DCNNs</em> at Dokuz Eylül University, İzmir.</li>
+                    <li><span class="news-date">[03/2018]</span> Presented paper at the special session of SIU 2018.</li>
+                    <li><span class="news-date">[01/2018]</span> Gave a seminar at European Centre for Living Technology (ECLT), Venice.</li>
+                    <li><span class="news-date">[11/2017]</span> Gave a seminar at University Paris-Est Créteil (UPEC), France.</li>
+                    <li><span class="news-date">[09/2017]</span> Our paper is accepted to be published in JVCI!</li>
+                    <li><span class="news-date">[09/2017]</span> Presented our paper at MADiMa 2017.</li>
+                    <li><span class="news-date">[03/2017]</span> Moved to Milano to join IVL team!</li>
                 </ul>
             </div>
         </section>
