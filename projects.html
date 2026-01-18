@@ -7,19 +7,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* --- ANA SAYFA ILE AYNI TEMEL CSS --- */
+    /* --- TEMEL AYARLAR --- */
     :root {
         --sidebar-width: 280px;
         --bg-color: #ffffff;
         --text-color: #333333;
-        --accent-color: #2f5da8; /* Ana lacivert (Proje başlıkları bu renk olacak) */
+        --accent-color: #2f5da8; 
         --secondary-text: #555555;
         --border-color: #eeeeee;
         --sidebar-bg: #f8f9fa;
         
-        /* --- ÖZEL RENKLER --- */
-        --custom-turquoise: #17a2b8; /* Roller için */
-        --custom-orange: #e67e22;    /* Vurgular için */
+        /* Renk Paleti */
+        --custom-turquoise: #17a2b8; 
+        --custom-orange: #e67e22;    
+        --title-black: #222222;      /* Başlıklar için yeni siyah */
     }
 
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text-color); line-height: 1.6; background-color: var(--bg-color); }
@@ -46,12 +47,12 @@
     
     #content { padding: 50px 60px; max-width: 900px; }
 
-    /* --- PROJECTS SAYFASINA ÖZEL STİLLER --- */
+    /* --- PROJECTS / MINIMALIST TASARIM --- */
     
     .project-list { 
         display: flex; 
         flex-direction: column; 
-        gap: 30px; 
+        gap: 35px; /* Boşluğu biraz artırdım, ferahlasın */
         margin-top: 30px;
     }
 
@@ -60,57 +61,69 @@
         border-left: 3px solid var(--border-color);
     }
 
-    /* Roller -> TURKUAZ */
+    /* 1. ROLLER (Turkuaz - Sabit) */
     .role-badge {
         color: var(--custom-turquoise);
         font-weight: 700;
-        font-size: 1.05rem;
+        font-size: 1rem;
         letter-spacing: 0.3px;
     }
     
-    /* Vurgular -> TURUNCU */
-    .highlight-badge {
-        color: var(--custom-orange);
-        font-weight: 700;
-    }
-
-    /* GÜNCELLENDİ: Proje Başlıkları -> MAVİ (Link olsa da olmasa da) */
+    /* 2. PROJE BAŞLIKLARI (Siyah - Minimal) */
     .project-title { 
         font-weight: 600; 
-        color: var(--accent-color); /* ARTIK HEP MAVİ */
-        margin-left: 5px;
+        color: var(--title-black); 
+        margin-left: 6px;
+        font-size: 1.05rem;
     }
-    /* Link olan başlıkların altını çizmemesi için */
+    
+    /* Eğer başlık link içeriyorsa bile siyah görünsün, hoverda renklensin */
     .project-title a {
-        color: var(--accent-color);
-        text-decoration: none;
+        color: var(--title-black);
+        border-bottom: 1px solid transparent;
+        transition: all 0.2s;
     }
     .project-title a:hover {
-        color: #1a3a6c;
-        text-decoration: underline;
+        color: var(--accent-color);
+        border-bottom-color: var(--accent-color);
     }
 
+    /* 3. DETAYLAR (Bold değil, Gri) */
     .project-details { 
-        margin-top: 5px; 
+        margin-top: 4px; 
         font-size: 0.95rem; 
-        color: var(--secondary-text); 
+        color: #555; /* Daha yumuşak bir gri */
+        font-weight: 400; /* Bold kaldırıldı */
     }
+
+    /* Linkler metin içinde sırııtmasın ama belli olsun */
+    .project-details a {
+        color: #555;
+        text-decoration: underline;
+        text-decoration-color: #ccc;
+    }
+    .project-details a:hover {
+        color: var(--accent-color);
+        text-decoration-color: var(--accent-color);
+    }
+
     .project-focus {
         margin-top: 8px;
         font-style: italic;
-        color: #444;
+        color: #666;
         font-size: 0.95rem;
     }
 
-    /* İç İçe Liste (Networks & Actions) */
+    /* Networks Listesi */
     .nested-list {
         margin: 10px 0 0 20px;
         padding: 0;
         list-style: none;
     }
     .nested-list li {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         position: relative;
+        color: #444;
     }
     .nested-list li::before {
         content: "•";
@@ -119,15 +132,17 @@
         left: -15px;
         font-weight: bold;
     }
-
-    /* GÜNCELLENDİ: COST Action Linkleri -> SİYAH */
-    .nested-list li a {
-        color: #333; /* Siyah Metin */
+    .nested-list a {
+        color: #222;
         font-weight: 600;
     }
-    .nested-list li a:hover {
-        color: var(--accent-color); /* Hover olunca mavi */
-        text-decoration: underline;
+    .nested-list a:hover { color: var(--accent-color); }
+
+    .highlight-badge {
+        color: var(--custom-orange);
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-left: 5px;
     }
 
     /* Mobil */
@@ -179,7 +194,7 @@
                     <span class="project-title">— AI-Based Visual Analysis for Artistic Research</span>
                 </div>
                 <div class="project-details">
-                    <strong>PNRR – NextGenerationEU — (2025 – In Progress)</strong><br> 
+                    PNRR – NextGenerationEU — (2025 – In Progress) <br> 
                     Part of <a href="https://abaroma.it/en-enacting-artistic-research/" target="_blank">Enacting Artistic Research (EAR)</a> (WP3/Task 3.2)
                 </div>
                 <div class="project-focus">
@@ -193,7 +208,7 @@
                     <span class="project-title">— <a href="https://www.repairproject.eu" target="_blank">RePAIR (Reconstructing the Past: Artificial Intelligence and Robotics meet Cultural Heritage)</a></span>
                 </div>
                 <div class="project-details">
-                    <strong>EU H2020 (FET Open) - (2022–2025)</strong>
+                    EU H2020 (FET Open) - (2022–2025)
                 </div>
                 <div class="project-focus">
                     Focus: AI-driven 2D/3D puzzle solving for archaeological fresco fragments.
@@ -203,10 +218,10 @@
             <div class="project-item">
                 <div>
                     <span class="role-badge">Researcher</span> 
-                    <span class="project-title">— <a href="https://www.corila.it/en/portfolio/venezia-2021-2/" target="_blank">BRIDGE and Venezia2021 projects</a></span>
+                    <span class="project-title">— <a href="https://www.corila.it/en/portfolio/venezia-2021-2/" target="_blank">BRIDGE / Venezia 2021</a></span>
                 </div>
                 <div class="project-details">
-                    <strong>National Scientific Research Program - (2020–2022)</strong>
+                    National Scientific Research Program - (2020–2022)
                 </div>
                 <div class="project-focus">
                     Focus: ML for water quality assessment in the Venice Lagoon.
@@ -219,7 +234,7 @@
                     <span class="project-title">— Semantic segmentation by deep learning with weak supervision (boxes/scribbles)</span>
                 </div>
                 <div class="project-details">
-                    <strong>TÜBİTAK 2219 Postdoctoral Fellowship - (2018–2020)</strong>
+                    TÜBİTAK 2219 Postdoctoral Fellowship - (2018–2020)
                 </div>
             </div>
 
@@ -229,11 +244,11 @@
                 </div>
                 <ul class="nested-list">
                     <li>
-                        <a href="https://artisticintelligence.info" target="_blank"><strong>COST Action CA23158</strong></a> — Artistic Intelligence: Responsiveness, Accessibility, Responsibility, Equity (ARTinRARE) — 
+                        <a href="https://artisticintelligence.info" target="_blank">COST Action CA23158</a> — Artistic Intelligence (ARTinRARE) — 
                         <span class="highlight-badge">WG3 Member</span>
                     </li>
                     <li>
-                        <a href="https://maiacost.eu" target="_blank"><strong>COST Action CA23141</strong></a> — Managing Artificial Intelligence in Archaeology (MAIA) — 
+                        <a href="https://maiacost.eu" target="_blank">COST Action CA23141</a> — AI in Archaeology (MAIA) — 
                         <span class="highlight-badge">WG3 Member</span>
                     </li>
                 </ul>
