@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Publications | Sinem Aslan, Ph.D.</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- ANA SAYFA ILE AYNI TEMEL CSS --- */
+    :root {
+        --sidebar-width: 280px;
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --accent-color: #2f5da8;
+        --secondary-text: #555555;
+        --border-color: #eeeeee;
+        --sidebar-bg: #f8f9fa;
+        --date-color: #cc5454;
+    }
+
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text-color); line-height: 1.6; background-color: var(--bg-color); }
+    a { text-decoration: none; color: var(--accent-color); transition: color 0.2s; }
+    a:hover { color: #1a3a6c; }
+    h1, h2, h3 { font-weight: 600; margin-bottom: 1rem; color: #222; }
+    
+    /* Yıl Başlıkları */
+    h2.year-header { 
+        margin-top: 3rem; 
+        padding-bottom: 10px; 
+        border-bottom: 1px solid var(--border-color); 
+        color: #222;
+        font-size: 1.5rem;
+    }
+    
+    p { margin-bottom: 1rem; color: var(--secondary-text); }
+
+    .wrapper { display: grid; grid-template-columns: var(--sidebar-width) 1fr; min-height: 100vh; }
+    
+    /* Sidebar */
+    #sidebar { background-color: var(--sidebar-bg); padding: 40px 30px; position: sticky; top: 0; height: 100vh; overflow-y: auto; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
+    .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .name-block h1 { font-size: 1.8rem; margin: 0; line-height: 1.2; }
+    .name-block p { margin: 5px 0; color: #666; font-size: 0.95rem; }
+    .lab-badge { display: inline-block; background-color: #eef4ff; color: var(--accent-color); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; border: 1px solid #dce9fc; }
+    .contact-links { margin-top: 20px; display: flex; gap: 15px; font-size: 1.2rem; }
+    .contact-links a { color: #666; }
+    .contact-links a:hover { color: var(--accent-color); }
+    .main-nav { margin-top: 40px; flex-grow: 1; }
+    .main-nav ul { list-style: none; padding: 0; margin: 0; }
+    .main-nav li { margin-bottom: 12px; }
+    .main-nav a { color: #666; font-weight: 600; display: block; font-size: 1.05rem; }
+    .main-nav a:hover, .main-nav a.active { color: var(--accent-color); }
+    
+    #content { padding: 50px 60px; max-width: 900px; }
+
+    /* --- PUBLICATIONS ÖZEL STİLLERİ --- */
+    
+    /* Profil Linkleri (Google Scholar vb.) */
+    .external-profiles { margin-bottom: 40px; display: flex; gap: 20px; flex-wrap: wrap; }
+    .external-profiles a {
+        display: inline-block; 
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--secondary-text);
+        border: 1px solid #eee;
+        padding: 5px 12px;
+        border-radius: 4px;
+        background: #fafafa;
+    }
+    .external-profiles a:hover { border-color: var(--accent-color); color: var(--accent-color); background: #fff; }
+
+    /* Liste Yapısı */
+    ul.publication-list { list-style: none; padding: 0; margin: 0; }
+    
+    li.publication-item { 
+        margin-bottom: 20px; 
+        padding-left: 20px; 
+        position: relative; 
+        line-height: 1.5;
+        font-size: 1rem;
+        color: #444;
+    }
+    
+    /* Bullet (Nokta) */
+    li.publication-item::before {
+        content: "•";
+        color: var(--accent-color);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    /* Link Stili (Ana sayfa ile uyumlu: Zarif & Pastel) */
+    .paper-links a {
+        display: inline-block; 
+        margin-left: 5px;
+        font-size: 0.85rem;
+        font-family: monospace; 
+        font-weight: normal; 
+        color: #7a92ac; 
+        text-decoration: none;
+    }
+    .paper-links a:hover { 
+        text-decoration: underline; 
+        color: var(--accent-color); 
+    }
+
+    /* Mobil */
+    @media (max-width: 900px) {
+        .wrapper { grid-template-columns: 1fr; }
+        #sidebar { height: auto; position: relative; padding: 30px; border-right: none; border-bottom: 1px solid var(--border-color); align-items: center; text-align: center; }
+        .main-nav { margin-top: 25px; width: 100%; }
+        .main-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        #content { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <aside id="sidebar">
+        <img src="files/sinemaslan2.jpeg" alt="Sinem Aslan" class="profile-img">
+        <div class="name-block">
+            <h1>Sinem Aslan, Ph.D.</h1>
+            <div class="lab-badge">PI of VCH Lab</div>
+            <p>Assoc. Prof., University of Milan</p>
+            <p>Assoc. Member, ECLT Venice</p>
+        </div>
+        <div class="contact-links">
+            <a href="mailto:siinem@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://github.com/siinem" title="Github"><i class="fab fa-github"></i></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="group.html">Group</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main id="content">
+        
+        <h1>Publications</h1>
+        
+        <div class="external-profiles">
+            <a href="https://scholar.google.com/citations?user=3YOjOJsAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://www.researchgate.net/profile/Sinem_Aslan" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
+            <a href="https://ege.academia.edu/SinemAslan" target="_blank"><i class="fas fa-university"></i> Academia</a>
+        </div>
+
+        <h2 class="year-header">2025</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                Omidreza Safaei, <strong>Sinem Aslan</strong>, Sebastiano Vascon, Luca Palmieri, Marina Khoroshiltseva, Marcello Pelillo. 
+                "Solving Jigsaw Puzzles in the Wild: Human-Guided Reconstruction of Cultural Heritage Fragments." 
+                <em>2025 IEEE 35th International Workshop on Machine Learning for Signal Processing (MLSP)</em>, Istanbul, Turkiye, 2025, pp. 1-6. 
+                <span class="paper-links"><a href="https://doi.org/10.1109/MLSP62443.2025.11204324" target="_blank">[DOI]</a></span>
+            </li>
+            <li class="publication-item">
+                Gianluca Bison, Luca Palmieri, <strong>Sinem Aslan</strong>, Sebastiano Vascon, and Marcello Pelillo. 
+                "Automatizing 3D reconstruction pipelines for speeding-up cultural heritage digitization." 
+                <em>Multimedia Tools and Applications</em>, 2025, pp. 1-21.
+            </li>
+            <li class="publication-item">
+                Ali Alagrami, Luca Palmieri, <strong>Sinem Aslan</strong>, Marcello Pelillo, and Sebastiano Vascon. 
+                "Reassembling broken objects using breaking curves." 
+                In <em>International Conference on Pattern Recognition (ICPR)</em>, pp. 197-208. Springer, 2025.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2024</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                Tsesmelis, T. et al., "Re-assembling the past: The RePAIR dataset and benchmark for real world 2D and 3D puzzle solving." 
+                <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 37, pp.30076-30105, 2024.
+                <span class="paper-links"><a href="https://repairproject.github.io/RePAIR_dataset/" target="_blank">[Project]</a></span>
+            </li>
+            <li class="publication-item">
+                Marina Khoroshiltseva, Luca Palmieri, <strong>Sinem Aslan</strong>, Sebastiano Vascon, and Marcello Pelillo. 
+                "Nash Meets Wertheimer: Using Good Continuation in Jigsaw Puzzles." 
+                In <em>Proceedings of the Asian Conference on Computer Vision (ACCV)</em>, pp. 3223-3238. 2024.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2023</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, and Luc Steels. "Aligning figurative paintings with their sources for semantic interpretation." 
+                <em>International Journal of Interactive Multimedia and Artificial Intelligence</em>, (2023).
+                <span class="paper-links"><a href="http://dx.doi.org/10.9781/ijimai.2023.04.004" target="_blank">[DOI]</a></span>
+            </li>
+            <li class="publication-item">
+                Aref Enayati, Luca Palmieri, Sebastiano Vascon, Marcello Pelillo, and <strong>Sinem Aslan</strong>. 
+                "Semantic motif segmentation of archaeological fresco fragments." 
+                In <em>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</em>, pp. 1717-1725. 2023. 
+                <span class="paper-links"><a href="https://repairproject.github.io/fragment-restoration/" target="_blank">[Project]</a></span>
+            </li>
+            <li class="publication-item">
+                Alice Othmani, Aznul Qalid Md Sabri, <strong>Sinem Aslan</strong>, Faten Chaieb, Hala Rameh, Romain Alfred, and Dayron Cohen. 
+                "EEG-based neural networks approaches for fatigue and drowsiness detection: A survey." 
+                <em>Neurocomputing</em> 557 (2023): 126709.
+            </li>
+            <li class="publication-item">
+                Zennaro, F., Furlan, E., Canu, D., Alcazar, L.A., Rosati, G., Solidoro, C., <strong>Aslan, S.</strong> and Critto, A. 
+                "Venice lagoon chlorophyll-a evaluation under climate change conditions: A hybrid water quality machine learning and biogeochemical-based framework." 
+                <em>Ecological Indicators</em>, 157, p.111245, 2023.
+            </li>
+            <li class="publication-item">
+                Federica Zennaro, Elisa Furlan, Donata Melaku Canu, Leslie Aveytua Alcazar, Ginevra Rosati, <strong>Sinem Aslan</strong>, Cosimo Solidoro, and Andrea Critto. 
+                "Evaluation of lagoon eutrophication potential under climate change conditions: A novel water quality machine learning and biogeochemical-based framework." 
+                In <em>EGU General Assembly Conference Abstracts</em>, pp. EGU-8409. 2023.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2022</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Giovanna Castellano, Vincenzo Digeno, Giuseppe Migailo, Raffaele Scaringi, and Gennaro Vessio. 
+                "Recognizing the emotions evoked by artworks through visual features and knowledge graph-embeddings." 
+                In <em>International Conference on Image Analysis and Processing (ICIAP)</em>, pp. 129-140. Springer, 2022.
+            </li>
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Federica Zennaro, Elisa Furlan, and Andrea Critto. 
+                "Recurrent neural networks for water quality assessment in complex coastal lagoon environments: A case study on the Venice Lagoon." 
+                <em>Environmental Modelling & Software</em> 154 (2022): 105403.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2021</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, and Luc Steels. 
+                "Identifying centres of interest in paintings using alignment and edge detection: Case studies on works by Luc Tuymans." 
+                In <em>International Conference on Pattern Recognition (ICPR)</em>, pp. 589-603. Springer, 2021.
+            </li>
+            <li class="publication-item">
+                Sebastiano Vascon, <strong>Sinem Aslan</strong>, Gianluca Bigaglia, Lorenzo Giudice, and Marcello Pelillo. 
+                "Transductive visual verb sense disambiguation." 
+                In <em>Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)</em>, pp. 3050-3059. 2021.
+            </li>
+            <li class="publication-item">
+                A. Emre Kavur, N. Sinem Gezer, Mustafa Barış, <strong>Sinem Aslan</strong>, et al. 
+                "CHAOS challenge-combined (CT-MR) healthy abdominal organ segmentation." 
+                <em>Medical Image Analysis</em> 69 (2021): 101950.
+            </li>
+            <li class="publication-item">
+                Sana Yasin, Syed Asad Hussain, <strong>Sinem Aslan</strong>, Imran Raza, Muhammad Muzammel, and Alice Othmani. 
+                "EEG based Major Depressive disorder and Bipolar disorder detection using Neural Networks: A review." 
+                <em>Computer Methods and Programs in Biomedicine</em> 202 (2021): 106007.
+            </li>
+            <li class="publication-item">
+                Federica Zennaro, Elisa Furlan, Christian Simeoni, Silvia Torresan, <strong>Sinem Aslan</strong>, Andrea Critto, and Antonio Marcomini. 
+                "Exploring machine learning potential for climate change risk assessment." 
+                <em>Earth-Science Reviews</em> 220 (2021): 103752.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2020</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Gianluigi Ciocca, Davide Mazzini, and Raimondo Schettini. 
+                "Benchmarking algorithms for food localization and semantic segmentation." 
+                <em>International Journal of Machine Learning and Cybernetics</em> 11, no. 12 (2020): 2827-2847.
+            </li>
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Sebastiano Vascon, and Marcello Pelillo. 
+                "Two sides of the same coin: Improved ancient coin classification using Graph Transduction Games." 
+                <em>Pattern Recognition Letters</em> 131 (2020): 158-165.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2019</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, and Marcello Pelillo. 
+                "Weakly supervised semantic segmentation using constrained dominant sets." 
+                In <em>International Conference on Image Analysis and Processing (ICIAP)</em>, pp. 425-436. Springer, 2019.
+            </li>
+            <li class="publication-item">
+                Sebastiano Vascon, <strong>Sinem Aslan</strong>, Alessandro Torcinovich, Twan van Laarhoven, Elena Marchiori, and Marcello Pelillo. 
+                "Unsupervised domain adaptation using graph transduction games." 
+                In <em>2019 International Joint Conference on Neural Networks (IJCNN)</em>, pp. 1-8. IEEE, 2019.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2018</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                Ayşen Değerli, <strong>Sinem Aslan</strong>, Mehmet Yamac, Bulent Sankur, and Moncef Gabbouj. 
+                "Compressively sensed image recognition." 
+                In <em>2018 7th European Workshop on Visual Information Processing (EUVIP)</em>, pp. 1-6. IEEE, 2018.
+            </li>
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Sebastiano Vascon, and Marcello Pelillo. 
+                "Ancient coin classification using graph transduction games." 
+                In <em>2018 Metrology for Archaeology and Cultural Heritage (MetroArchaeo)</em>, pp. 127-131. IEEE, 2018.
+            </li>
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Gianluigi Ciocca, and Raimondo Schettini. 
+                "Semantic food segmentation for automatic dietary monitoring." 
+                In <em>2018 IEEE 8th International Conference on Consumer Electronics-Berlin (ICCE-Berlin)</em>, pp. 1-6. IEEE, 2018.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2017</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Ceyhun B. Akgül, Bülent Sankur, E. Turhan Tunalı. 
+                "Exploring visual dictionaries: A model-driven perspective." 
+                <em>Journal of Visual Communication and Image Representation</em>, vol. 49, pp.315-331, 2017. 
+                <span class="paper-links"><a href="https://doi.org/10.1016/j.jvcir.2017.09.009" target="_blank">[DOI]</a></span>
+            </li>
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Gianluigi Ciocca, Raimondo Schettini. 
+                "On Comparing Color Spaces for Food Segmentation." 
+                <em>New Trends in Image Analysis and Processing – 19th Int. Conf. on Image Analysis and Processing (ICIAP)</em>. Springer, 2017. 
+                <span class="paper-links">
+                    <a href="https://doi.org/10.1007/978-3-319-70742-6_42" target="_blank">[DOI]</a>
+                    <a href="http://madima.org/wp-content/uploads/2017/11/13-presentation_madima2017_sa_gc_rs.pdf" target="_blank">[Slides]</a>
+                    <a href="http://madima.org/wp-content/uploads/2017/11/13-poster_madima2017_sa_gc_rs.pdf.pdf" target="_blank">[Poster]</a>
+                </span>
+            </li>
+        </ul>
+
+        <h2 class="year-header">2016</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Mehmet Yamaç, Bülent Sankur. 
+                "A DCT-based multiscale binary descriptor robust to complex brightness changes." 
+                <em>24th European Signal Processing Conference (EUSIPCO)</em>, Budapest, Hungary, 2016.
+                <span class="paper-links"><a href="https://doi.org/10.1109/EUSIPCO.2016.7760513" target="_blank">[DOI]</a></span>
+            </li>
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Ceyhun B. Akgül, Bülent Sankur, E. Turhan Tunalı. 
+                "A novel study on developing a model-driven visual dictionary." 
+                <em>24th IEEE Signal Processing and Communication Application Conference (SIU)</em>, 2016.
+                <span class="paper-links"><a href="https://doi.org/10.1109/SIU.2016.7496181" target="_blank">[DOI]</a></span>
+            </li>
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>. 
+                "Semantic Interest Point Detection." 
+                Ph.D. thesis, Ege University, International Computer Institute, 2016.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2015</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Ceyhun B. Akgül, Bülent Sankur, E. Turhan Tunalı. 
+                "SymPaD: Symbolic Patch Descriptor." 
+                <em>10th Int. Conf. on Computer Vision Theory and Applications (VISAPP)</em>, Berlin, Germany, 2015.
+                <span class="paper-links"><a href="https://doi.org/10.5220/0005361802660271" target="_blank">[DOI]</a></span>
+            </li>
+        </ul>
+
+        <h2 class="year-header">2014</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Ceyhun B. Akgül, Bülent Sankur. 
+                "Symbolic feature detection for image understanding." 
+                <em>Proc. SPIE 9024, Image Processing: Machine Vision Applications VII</em>, 2014.
+                <span class="paper-links"><a href="https://doi.org/10.1117/12.2040783" target="_blank">[DOI]</a></span>
+            </li>
+        </ul>
+
+        <h2 class="year-header">2013</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, and E. Turhan Tunalı. 
+                "Joint compressive video coding and analysis With Hidden Markov model based weighted reconstruction." 
+                In <em>2013 21st Signal Processing and Communications Applications Conference (SIU)</em>, IEEE, 2013.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2012</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, and E. Turhan Tunalı. 
+                "A comparative study of compressed sensing video encoding GOP patterns for stereo distributed video coding." 
+                In <em>2012 20th Signal Processing and Communications Applications Conference (SIU)</em>, IEEE, 2012.
+            </li>
+            <li class="publication-item">
+                Bahar Karaoglan, <strong>Sinem Aslan</strong>, and Erdem Karayer. 
+                "The Zipfian distributions on term x document matrix." 
+                <em>International Conference on Analysis and Applied Mathematics (ICAAM)</em>, 2012.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2008</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Yigit Uzer, Orhan Isik, Melih Altun, and Muhammed Cinsdikici. 
+                "A simple and improvable method for face region extraction." 
+                In <em>2008 23rd International Symposium on Computer and Information Sciences</em>, IEEE, 2008.
+            </li>
+        </ul>
+
+        <h2 class="year-header">2007</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>. 
+                "A Comparative Study of Feature Metrics for Classification of Human Passport Photos." 
+                M.Sc. thesis, Ege University, International Computer Institute, 2007.
+            </li>
+            <li class="publication-item">
+                <strong>Sinem Aslan</strong>, Turhan Tunali, and Muhammed Cinsdikici. 
+                "A Comparative Study of Feature Metrics For Classification Of Human Passport Photos." 
+                In <em>2007 IEEE 15th Signal Processing and Communications Applications</em>, IEEE, 2007.
+            </li>
+        </ul>
+
+    </main>
+</div>
+
+</body>
+</html>
