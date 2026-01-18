@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* --- ANA SAYFA ILE AYNI TEMEL CSS --- */
+    /* --- TEMEL CSS --- */
     :root {
         --sidebar-width: 280px;
         --bg-color: #ffffff;
@@ -16,8 +16,6 @@
         --secondary-text: #555555;
         --border-color: #eeeeee;
         --sidebar-bg: #f8f9fa;
-        
-        /* Renk Paleti */
         --custom-turquoise: #17a2b8; 
         --custom-orange: #e67e22;    
         --title-black: #222222;
@@ -50,14 +48,14 @@
     /* --- TEAM SAYFASI ÖZEL STİLLER --- */
     
     h2.section-header {
-        margin-top: 3rem;
+        margin-top: 3.5rem;
         padding-bottom: 10px;
         border-bottom: 1px solid var(--border-color);
         font-size: 1.4rem;
         color: var(--title-black);
     }
 
-    /* 1. TEAM MEMBERS (Yatay Kartlar) */
+    /* 1. CORE TEAM */
     .member-list { display: flex; flex-direction: column; gap: 30px; margin-top: 20px; }
     .member-item { 
         display: grid; 
@@ -80,34 +78,20 @@
     .member-item:hover .member-photo { filter: grayscale(0%); }
 
     .member-info h3 { margin: 0 0 2px 0; font-size: 1.15rem; color: var(--title-black); }
-    
-    /* ROLLER -> TURKUAZ */
-    .member-role { 
-        color: var(--custom-turquoise); 
-        font-weight: 700; 
-        font-size: 0.95rem; 
-        display: block; 
-        margin-bottom: 8px; 
-    }
-    
+    .member-role { color: var(--custom-turquoise); font-weight: 700; font-size: 0.95rem; display: block; margin-bottom: 8px; }
     .member-bio { font-size: 0.95rem; color: #555; margin-bottom: 10px; line-height: 1.5; }
     
-    .member-links a { 
-        margin-right: 12px; 
-        color: #999; 
-        font-size: 1.1rem; 
-        transition: color 0.2s;
-    }
+    .member-links a { margin-right: 12px; color: #999; font-size: 1.1rem; transition: color 0.2s; }
     .member-links a:hover { color: var(--accent-color); }
 
-    /* 2. COLLABORATORS (3'lü Grid) */
-    .collab-grid {
+    /* 2. SENIOR COLLABORATORS & AFFILIATES (GRID) */
+    .people-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         gap: 25px;
         margin-top: 20px;
     }
-    .collab-card {
+    .person-card {
         background: #fff;
         border: 1px solid #eee;
         padding: 20px;
@@ -115,73 +99,28 @@
         text-align: center;
         transition: transform 0.2s;
     }
-    .collab-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .person-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
     
-    .collab-photo {
+    .person-photo {
         width: 90px; height: 90px;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 15px;
-        border: 2px solid #f0f0f0;
+        border: 2px solid #f8f9fa;
     }
-    .collab-card h4 { margin: 0; font-size: 1rem; color: #222; }
-    .collab-card span { font-size: 0.85rem; color: #777; display: block; margin-top: 5px; }
+    .person-card h4 { margin: 0; font-size: 1rem; color: #222; }
+    .person-card span { font-size: 0.85rem; color: #777; display: block; margin-top: 5px; }
+    .person-topic { font-size: 0.8rem; color: var(--custom-orange); font-style: italic; margin-top: 4px; display: block; }
 
-    /* 3. STUDENTS (Basit Grid) */
-    .student-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
-    .student-item {
-        background: #fafafa;
-        padding: 15px;
-        border-radius: 6px;
-        border: 1px solid #eee;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    .student-mini-photo {
-        width: 50px; height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    .student-info h4 { margin: 0; font-size: 0.95rem; color: #333; }
-    .student-info span { font-size: 0.8rem; color: #666; display: block; }
-
-    /* 4. ALUMNI (Liste) */
+    /* 4. ALUMNI */
     ul.alumni-list { list-style: none; padding: 0; margin-top: 15px; }
-    ul.alumni-list li { 
-        margin-bottom: 12px; 
-        padding-left: 15px; 
-        border-left: 3px solid #eee; 
-        font-size: 0.95rem; 
-        color: #555; 
-    }
+    ul.alumni-list li { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid #eee; font-size: 0.95rem; color: #555; }
     ul.alumni-list li strong { color: #333; font-weight: 600; margin-right: 5px; }
 
-    /* 5. INSTITUTIONAL LOGOS */
-    .inst-grid { 
-        display: flex; 
-        flex-wrap: wrap; 
-        gap: 40px; 
-        align-items: center; 
-        margin-top: 20px; 
-        justify-content: start; /* Sola yaslı ama boşluklu */
-    }
-    .inst-item img { 
-        height: 45px; 
-        width: auto; 
-        opacity: 0.6; 
-        filter: grayscale(100%); 
-        transition: all 0.3s; 
-    }
-    .inst-item img:hover { 
-        opacity: 1; 
-        filter: grayscale(0%); 
-    }
+    /* 5. LOGOS */
+    .inst-grid { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-top: 20px; }
+    .inst-item img { height: 45px; width: auto; opacity: 0.6; filter: grayscale(100%); transition: all 0.3s; }
+    .inst-item img:hover { opacity: 1; filter: grayscale(0%); }
 
     /* Mobil */
     @media (max-width: 900px) {
@@ -191,7 +130,6 @@
         .main-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
         .member-item { grid-template-columns: 1fr; text-align: center; }
         .member-photo { width: 150px; height: 150px; margin: 0 auto; }
-        .student-item { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -207,9 +145,9 @@
             <p>Assoc. Member, ECLT Venice</p>
         </div>
         <div class="contact-links">
-            <a href="mailto:siinem@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:siinem@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-            <a href="https://github.com/siinem"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/siinem" title="Github"><i class="fab fa-github"></i></a>
         </div>
         <nav class="main-nav">
             <ul>
@@ -217,7 +155,8 @@
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="teaching.html">Teaching</a></li>
-                <li><a href="group.html" class="active">Group</a></li> </ul>
+                <li><a href="group.html" class="active">Group</a></li>
+            </ul>
         </nav>
     </aside>
 
@@ -242,7 +181,6 @@
                     <div class="member-links">
                         <a href="https://scholar.google.com/citations?hl=en&user=2evdg5YAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                         <a href="mailto:email@address.com"><i class="fas fa-envelope"></i></a>
-                        <a href="#"><i class="fas fa-globe"></i></a>
                     </div>
                 </div>
             </div>
@@ -258,62 +196,67 @@
                     <div class="member-links">
                         <a href="https://scholar.google.com/citations?user=jkNNxSoAAAAJ&hl=tr" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                         <a href="https://github.com/volkbay"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <h2 class="section-header">Scientific Collaborators</h2>
-        <div class="collab-grid">
+        <h2 class="section-header">Senior Scientific Collaborators</h2>
+        <div class="people-grid">
             
-            <div class="collab-card">
-                <img src="https://placehold.co/90x90/eee/999?text=MP" alt="Collaborator" class="collab-photo">
+            <div class="person-card">
+                <img src="https://placehold.co/90x90/eee/999?text=MP" alt="Pelillo" class="person-photo">
                 <h4>Marcello Pelillo</h4>
                 <span>Professor, Ca' Foscari University</span>
             </div>
 
-            <div class="collab-card">
-                <img src="https://placehold.co/90x90/eee/999?text=LS" alt="Collaborator" class="collab-photo">
+            <div class="person-card">
+                <img src="https://placehold.co/90x90/eee/999?text=LS" alt="Steels" class="person-photo">
                 <h4>Luc Steels</h4>
                 <span>Professor, VUB / ICREA</span>
             </div>
 
-            <div class="collab-card">
-                <img src="https://placehold.co/90x90/eee/999?text=X" alt="Collaborator" class="collab-photo">
+            <div class="person-card">
+                <img src="https://placehold.co/90x90/eee/999?text=Prof" alt="Prof Name" class="person-photo">
                 <h4>Name Surname</h4>
-                <span>Affiliation / Lab</span>
+                <span>Professor, University of X</span>
+            </div>
+
+        </div>
+
+        <h2 class="section-header">Research Affiliates</h2>
+        <div class="people-grid">
+            
+            <div class="person-card">
+                <img src="https://placehold.co/90x90/eef4ff/2f5da8?text=SM" alt="Sara" class="person-photo">
+                <h4>Sara Miketek</h4>
+                <span>Collaborating Researcher</span>
+                <span class="person-topic">Topic: Style Recognition of Artworks</span>
+            </div>
+
+            <div class="person-card">
+                <img src="https://placehold.co/90x90/eef4ff/2f5da8?text=Name" alt="Other" class="person-photo">
+                <h4>Name Surname</h4>
+                <span>Collaborating Researcher</span>
+                <span class="person-topic">Topic: Research Topic</span>
             </div>
 
         </div>
 
         <h2 class="section-header">Visiting Scholars & Students</h2>
-        <div class="student-grid">
-            
-            <div class="student-item">
-                <img src="https://placehold.co/50x50/eee/bbb?text=S" alt="Student" class="student-mini-photo">
-                <div class="student-info">
-                    <h4>Student Name</h4>
-                    <span>Erasmus Student (Univ. of X)</span>
-                </div>
+        <div class="people-grid">
+            <div class="person-card">
+                <img src="https://placehold.co/90x90/fafafa/ccc?text=S" alt="Student" class="person-photo">
+                <h4>Student Name</h4>
+                <span>Erasmus Student (Univ. of X)</span>
             </div>
-
-            <div class="student-item">
-                <img src="https://placehold.co/50x50/eee/bbb?text=V" alt="Visitor" class="student-mini-photo">
-                <div class="student-info">
-                    <h4>Student Name</h4>
-                    <span>Visiting Researcher (Style Transfer)</span>
-                </div>
-            </div>
-
         </div>
 
         <h2 class="section-header">Alumni</h2>
         <ul class="alumni-list">
             <li><strong>Name Surname</strong> (MSc Student, 2023) — Thesis: "Title of the thesis". Now Ph.D. student at [University].</li>
             <li><strong>Name Surname</strong> (Visiting Scholar, 2022) — Now Data Scientist at [Company].</li>
-            <li><strong>Name Surname</strong> (Erasmus, 2021) — Currently at [Institution].</li>
         </ul>
 
         <h2 class="section-header">Institutional Collaborations</h2>
