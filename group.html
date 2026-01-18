@@ -112,10 +112,17 @@
     .person-card span { font-size: 0.85rem; color: #777; display: block; margin-top: 5px; }
     .person-topic { font-size: 0.8rem; color: var(--custom-orange); font-style: italic; margin-top: 4px; display: block; }
 
-    /* 4. ALUMNI */
-    ul.alumni-list { list-style: none; padding: 0; margin-top: 15px; }
-    ul.alumni-list li { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid #eee; font-size: 0.95rem; color: #555; }
-    ul.alumni-list li strong { color: #333; font-weight: 600; margin-right: 5px; }
+    /* 4. LIST STYLE (VISITING & ALUMNI) */
+    /* Hem Alumni hem de Visiting Students için ortak liste stili */
+    ul.text-list { list-style: none; padding: 0; margin-top: 15px; }
+    ul.text-list li { 
+        margin-bottom: 12px; 
+        padding-left: 15px; 
+        border-left: 3px solid #eee; /* Sol taraftaki şık çizgi */
+        font-size: 0.95rem; 
+        color: #555; 
+    }
+    ul.text-list li strong { color: #333; font-weight: 600; margin-right: 5px; }
 
     /* 5. LOGOS */
     .inst-grid { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-top: 20px; }
@@ -179,8 +186,8 @@
                         Wajid will be joining the group in Spring 2026. He holds a Ph.D. in Artificial Intelligence from the College of Computer Science and Technology, Jilin University, China.
                     </p>
                     <div class="member-links">
-                        <a href="mailto:email@address.com"><i class="fas fa-envelope"></i></a>
                         <a href="https://scholar.google.com/citations?hl=en&user=2evdg5YAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="mailto:email@address.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -194,7 +201,6 @@
                         Focusing on AI-Based Visual Analysis for Artistic Research within the context of the EAR project.
                     </p>
                     <div class="member-links">
-                        <a href="mailto:email@address.com"><i class="fas fa-envelope"></i></a>
                         <a href="https://scholar.google.com/citations?user=jkNNxSoAAAAJ&hl=tr" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                         <a href="https://github.com/volkbay"><i class="fab fa-github"></i></a>
                     </div>
@@ -218,7 +224,7 @@
                 <span>Professor, VUB / ICREA</span>
             </div>
 
-            <div class="person-card">
+             <div class="person-card">
                 <img src="https://placehold.co/90x90/eee/999?text=Prof" alt="Prof Name" class="person-photo">
                 <h4>Name Surname</h4>
                 <span>Professor, University of X</span>
@@ -253,16 +259,13 @@
         </div>
 
         <h2 class="section-header">Visiting Scholars & Students</h2>
-        <div class="people-grid">
-            <div class="person-card">
-                <img src="https://placehold.co/90x90/fafafa/ccc?text=S" alt="Student" class="person-photo">
-                <h4>Student Name</h4>
-                <span>Erasmus Student (Univ. of X)</span>
-            </div>
-        </div>
+        <ul class="text-list">
+            <li><strong>Student Name</strong> (Erasmus Student, 2025) — University of X.</li>
+            <li><strong>Student Name</strong> (Visiting Researcher, 2025) — Topic: Style Transfer.</li>
+        </ul>
 
         <h2 class="section-header">Alumni</h2>
-        <ul class="alumni-list">
+        <ul class="text-list">
             <li><strong>Name Surname</strong> (MSc Student, 2023) — Thesis: "Title of the thesis". Now Ph.D. student at [University].</li>
             <li><strong>Name Surname</strong> (Visiting Scholar, 2022) — Now Data Scientist at [Company].</li>
         </ul>
