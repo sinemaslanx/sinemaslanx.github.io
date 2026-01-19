@@ -123,9 +123,16 @@
     }
     ul.text-list li strong { color: #333; font-weight: 600; margin-right: 5px; }
 
-    /* 5. LOGOS */
+    /* 5. LOGOS (GÜNCELLENDİ) */
     .inst-grid { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-top: 20px; }
-    .inst-item img { height: 45px; width: auto; opacity: 0.6; filter: grayscale(100%); transition: all 0.3s; }
+    
+    .inst-item img { 
+        height: 55px;       /* Boyut 45px'ten 55px'e çıkarıldı */
+        width: auto; 
+        opacity: 0.85;      /* Opaklık 0.6'dan 0.85'e çıkarıldı (Daha koyu/net) */
+        filter: grayscale(100%); 
+        transition: all 0.3s; 
+    }
     .inst-item img:hover { opacity: 1; filter: grayscale(0%); }
 
     /* Mobil */
@@ -146,6 +153,7 @@
         <img src="files/sinemaslan2.jpeg" alt="Sinem Aslan" class="profile-img">
         <div class="name-block">
             <h1>Sinem Aslan, Ph.D.</h1>
+            <div class="lab-badge">PI of VCH Lab</div>
             <p>Assoc. Prof., University of Milan</p>
             <p>Assoc. Member, ECLT Venice</p>
         </div>
@@ -167,10 +175,10 @@
 
     <main id="content">
         
-      <!--  <h1 style="margin-bottom: 0.5rem;">VCH Lab Team</h1> -->
+        <h1 style="margin-bottom: 0.5rem;">VCH Lab Team</h1>
         <p style="font-size: 1.05rem; color: #555;">
-            <!-- Our group is composed of researchers and students passionate about the intersection of Artificial Intelligence, Computer Vision, and Cultural Heritage. -->
-        </p> 
+            Our group is composed of researchers and students passionate about the intersection of Artificial Intelligence, Computer Vision, and Cultural Heritage.
+        </p>
 
         <h2 class="section-header">Team Members</h2>
         <div class="member-list">
@@ -262,13 +270,13 @@
         <h2 class="section-header">Institutional Collaborations</h2>
         <div class="inst-grid">
             <div class="inst-item">
-                <a href="https://sites.google.com/view/cvml-lab/home-page?authuser=0" target="_blank"><img src="https://placehold.co/120x50/fff/666?text=CVML@Ca'+Foscari" alt="UNIVE"></a>
+                <a href="https://sites.google.com/view/cvml-lab/home-page?authuser=0" target="_blank"><img src="https://placehold.co/160x60/fff/444?text=CVML@Ca'+Foscari" alt="UNIVE"></a>
             </div>
             <div class="inst-item">
-                <a href="https://www.unive.it/pag/23664/" target="_blank"><img src="https://placehold.co/120x50/fff/666?text=ECLT@Ca'+Foscari" alt="ECLT"></a>
+                <a href="https://www.unive.it/pag/23664/" target="_blank"><img src="https://placehold.co/160x60/fff/444?text=ECLT@Ca'+Foscari" alt="ECLT"></a>
             </div>
             <div class="inst-item">
-                <a href="https://abaroma.it" target="_blank"><img src="https://placehold.co/120x50/fff/666?text=ABAROMA" alt="ABAROMA"></a>
+                <a href="https://abaroma.it" target="_blank"><img src="https://placehold.co/160x60/fff/444?text=ABAROMA" alt="ABAROMA"></a>
             </div>
         </div>
 
