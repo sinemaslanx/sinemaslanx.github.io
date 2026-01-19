@@ -12,13 +12,13 @@
         --sidebar-width: 280px;
         --bg-color: #ffffff;
         --text-color: #333333;
-        --accent-color: #2f5da8; /* Ana Lacivert */
+        --accent-color: #2f5da8; 
         --secondary-text: #555555;
         --border-color: #eeeeee;
         --sidebar-bg: #f8f9fa;
         
         /* ÖZEL RENKLER */
-        --custom-turquoise: #17a2b8; /* Vurgu Rengi */
+        --custom-turquoise: #17a2b8; 
         --custom-orange: #e67e22;
         --title-black: #222222;
     }
@@ -49,7 +49,7 @@
 
     /* --- PUBLICATIONS ÖZEL STİLLERİ --- */
 
-    /* Profil Linkleri (Google Scholar vb.) -> TURKUAZ */
+    /* Profil Linkleri (Google Scholar vb.) -> DOLU TURKUAZ */
     .external-profiles { 
         margin-bottom: 40px; 
         display: flex; 
@@ -63,20 +63,23 @@
         font-size: 0.9rem;
         font-weight: 600;
         
-        /* Turkuaz Stil */
-        color: #7a92ac; <!-- var(--custom-turquoise); -->
+        /* GÜNCELLENDİ: Varsayılan Dolu Görünüm */
+        color: #ffffff; /* Yazı beyaz */
+        background-color: var(--custom-turquoise); /* Arkaplan Turkuaz */
         border: 1px solid var(--custom-turquoise);
-        background: #fff;
         
-        padding: 8px 16px;
+        padding: 8px 18px;
         border-radius: 4px;
         transition: all 0.2s ease;
+        text-decoration: none;
     }
     .external-profiles a:hover { 
-        background-color: var(--custom-turquoise); 
-        color: #fff; /* Hoverda yazı beyaz olur */
-        box-shadow: 0 4px 10px rgba(23, 162, 184, 0.2);
+        /* Hover efekt: Hafif koyulaşır ve yukarı kalkar */
+        background-color: #138496; 
+        border-color: #117a8b;
+        box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
         transform: translateY(-2px);
+        color: #fff;
     }
 
     /* Yıl Başlıkları */
@@ -119,7 +122,7 @@
         font-size: 0.85rem;
         font-family: monospace; 
         font-weight: normal; 
-        color: var(--custom-turquoise); /* Pastel Mavi-Gri #7a92ac*/
+        color: #7a92ac; /* Pastel Mavi-Gri */
         text-decoration: none;
     }
     .paper-links a:hover { 
