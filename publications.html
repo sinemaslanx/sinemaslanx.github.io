@@ -12,11 +12,15 @@
         --sidebar-width: 280px;
         --bg-color: #ffffff;
         --text-color: #333333;
-        --accent-color: #2f5da8;
+        --accent-color: #2f5da8; /* Ana Lacivert */
         --secondary-text: #555555;
         --border-color: #eeeeee;
         --sidebar-bg: #f8f9fa;
-        --date-color: #cc5454;
+        
+        /* ÖZEL RENKLER */
+        --custom-turquoise: #17a2b8; /* Vurgu Rengi */
+        --custom-orange: #e67e22;
+        --title-black: #222222;
     }
 
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text-color); line-height: 1.6; background-color: var(--bg-color); }
@@ -24,17 +28,6 @@
     a:hover { color: #1a3a6c; }
     h1, h2, h3 { font-weight: 600; margin-bottom: 1rem; color: #222; }
     
-    /* Yıl Başlıkları */
-    h2.year-header { 
-        margin-top: 3rem; 
-        padding-bottom: 10px; 
-        border-bottom: 1px solid var(--border-color); 
-        color: #222;
-        font-size: 1.5rem;
-    }
-    
-    p { margin-bottom: 1rem; color: var(--secondary-text); }
-
     .wrapper { display: grid; grid-template-columns: var(--sidebar-width) 1fr; min-height: 100vh; }
     
     /* Sidebar */
@@ -42,7 +35,7 @@
     .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     .name-block h1 { font-size: 1.8rem; margin: 0; line-height: 1.2; }
     .name-block p { margin: 5px 0; color: #666; font-size: 0.95rem; }
-    .lab-badge { display: inline-block; background-color: #eef4ff; color: var(--accent-color); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; border: 1px solid #dce9fc; }
+    
     .contact-links { margin-top: 20px; display: flex; gap: 15px; font-size: 1.2rem; }
     .contact-links a { color: #666; }
     .contact-links a:hover { color: var(--accent-color); }
@@ -55,51 +48,78 @@
     #content { padding: 50px 60px; max-width: 900px; }
 
     /* --- PUBLICATIONS ÖZEL STİLLERİ --- */
-    
-    /* Profil Linkleri (Google Scholar vb.) */
-    .external-profiles { margin-bottom: 40px; display: flex; gap: 20px; flex-wrap: wrap; }
-    .external-profiles a {
-        display: inline-block; 
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: var(--secondary-text);
-        border: 1px solid #eee;
-        padding: 5px 12px;
-        border-radius: 4px;
-        background: #fafafa;
+
+    /* Profil Linkleri (Google Scholar vb.) -> TURKUAZ */
+    .external-profiles { 
+        margin-bottom: 40px; 
+        display: flex; 
+        gap: 15px; 
+        flex-wrap: wrap; 
     }
-    .external-profiles a:hover { border-color: var(--accent-color); color: var(--accent-color); background: #fff; }
+    .external-profiles a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        
+        /* Turkuaz Stil */
+        color: var(--custom-turquoise);
+        border: 1px solid var(--custom-turquoise);
+        background: #fff;
+        
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+    .external-profiles a:hover { 
+        background-color: var(--custom-turquoise); 
+        color: #fff; /* Hoverda yazı beyaz olur */
+        box-shadow: 0 4px 10px rgba(23, 162, 184, 0.2);
+        transform: translateY(-2px);
+    }
+
+    /* Yıl Başlıkları */
+    h2.year-header { 
+        margin-top: 3.5rem; 
+        padding-bottom: 8px; 
+        border-bottom: 1px solid var(--border-color); 
+        color: var(--title-black);
+        font-size: 1.4rem;
+    }
 
     /* Liste Yapısı */
     ul.publication-list { list-style: none; padding: 0; margin: 0; }
     
     li.publication-item { 
-        margin-bottom: 20px; 
+        margin-bottom: 25px; 
         padding-left: 20px; 
         position: relative; 
-        line-height: 1.5;
+        line-height: 1.6;
         font-size: 1rem;
         color: #444;
     }
     
-    /* Bullet (Nokta) */
+    /* Bullet (Nokta) - Turkuaz */
     li.publication-item::before {
         content: "•";
-        color: var(--accent-color);
+        color: var(--custom-turquoise);
         font-weight: bold;
         position: absolute;
         left: 0;
-        top: 0;
+        top: 0px;
+        font-size: 1.2rem;
+        line-height: 1.6;
     }
 
-    /* Link Stili (Ana sayfa ile uyumlu: Zarif & Pastel) */
+    /* Makale Linkleri (DOI, PDF vb.) - Zarif Stil */
     .paper-links a {
         display: inline-block; 
         margin-left: 5px;
         font-size: 0.85rem;
         font-family: monospace; 
         font-weight: normal; 
-        color: #7a92ac; 
+        color: #7a92ac; /* Pastel Mavi-Gri */
         text-decoration: none;
     }
     .paper-links a:hover { 
@@ -124,7 +144,6 @@
         <img src="files/sinemaslan2.jpeg" alt="Sinem Aslan" class="profile-img">
         <div class="name-block">
             <h1>Sinem Aslan, Ph.D.</h1>
-            <!-- <div class="lab-badge">PI of VCH Lab</div> -->
             <p>Assoc. Prof., University of Milan</p>
             <p>Assoc. Member, ECLT Venice</p>
         </div>
@@ -140,7 +159,7 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="teaching.html">Teaching</a></li>
                 <li><a href="group.html">Group</a></li>
-                <li><a href="index.html#news">News</a></li>           
+                <li><a href="index.html#news">News</a></li>
             </ul>
         </nav>
     </aside>
